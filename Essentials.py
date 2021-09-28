@@ -18,12 +18,12 @@ import distro
 
 #popen("apt-cache pkgnames > /home/timo/PiGro-Aid-/essentials/SomeFile.txt")
 
-popen("xterm -e 'bash -c \"apt-cache pkgnames > /home/timo/PiGro-Aid-/essentials/SomeFile.txt && exit; exec bash\"'")
+popen("xterm -e 'bash -c \"apt-cache pkgnames > ~/PDL/essentials/SomeFile.txt && exit; exec bash\"'")
 
 
-popen("dpkg --get-selections > /home/timo/PiGro-Aid-/essentials/packages.list")
+popen("dpkg --get-selections > ~/PDL/essentials/packages.list")
 #os.system("sed -e s/install//g -i /home/timo/PiGro-Aid-/essentials/packages.list")
-popen("xterm -e 'bash -c \"sed -e s/install//g -i /home/timo/PiGro-Aid-/essentials/packages.list && exit; exec bash\"'")
+popen("xterm -e 'bash -c \"sed -e s/install//g -i ~/PDL/essentials/packages.list && exit; exec bash\"'")
 
 
 
