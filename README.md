@@ -22,3 +22,5 @@ sudo apt install python3-pip -y
 ```
 $ python3 home/pi/PDL/Essentials.py
 ```
+![GUI](https://github.com/actionschnitzel/PDL/blob/main/1.png)
+![GUI](https://github.com/actionschnitzel/PDL/blob/main/2.png)
