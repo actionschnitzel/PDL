@@ -1,0 +1,1 @@
+Compiz is a compositing window manager for the X Window System, using 3D graphics hardware to create fast compositing desktop effects for window management. Effects, such as a minimization animation or a cube workspace, are implemented as loadable plugins.
