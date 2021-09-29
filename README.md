@@ -10,7 +10,7 @@ Then I thought that Synaptic was too complicated for beginners ...
 Then I thought Add / Remove Software hardly has any programs    
 Then I thought Gnome software was pretty cool ...    
     
-# Note: This software is absolutely not ready    
+# Note: This software is far from ready    
     
 Useage:
 ```
