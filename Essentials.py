@@ -334,6 +334,13 @@ shop_btn21 = Button(ess_frame, width=105, image=ip16, text="Samba", anchor="n", 
                   borderwidth=1, background='#434343', foreground="white", compound=TOP,font=("Helvetica",11,"bold")).grid(column=5, row=2,pady=5, padx=5)
 
 #####################################################################################################TAB2
+inst0_frame = Frame(tab2, borderwidth=0, background='#333333',highlightthickness=0)
+#ess_frame.place(x=3,y=250)
+inst0_frame.pack(anchor="nw")
+
+info_inst0= Label(inst0_frame, width=105, text="A list of all installed packages. You can scroll through the list or search using the enrty field.",font=("Helvetica",14,"bold"), anchor="n",
+                  highlightthickness=0, borderwidth=1, background='#333333', foreground="white", compound=TOP).pack()
+
 inst1_frame = Frame(tab2, borderwidth=0, background='#333333',highlightthickness=0)
 #ess_frame.place(x=3,y=250)
 inst1_frame.pack(anchor="nw",pady=20)
@@ -434,6 +441,13 @@ my_list.bind("<<ListboxSelect>>", fillout )
 
 my_entry.bind("<KeyRelease>", check)
 
+################################################################################
+inst0x_frame = Frame(tab2, borderwidth=0, background='#333333',highlightthickness=0)
+#ess_frame.place(x=3,y=250)
+inst0x_frame.pack(anchor="nw",pady=20)
+
+info_inst0= Label(inst0x_frame, width=105, text="A list of all installed packages. You can scroll through the list or search using the enrty field.",font=("Helvetica",14,"bold"), anchor="n",
+                  highlightthickness=0, borderwidth=1, background='#333333', foreground="white", compound=TOP).pack()
 #############################################################################inst2
 #############################################################################
 inst2_p1=""" xterm -e 'bash -c \"sudo apt purge """
@@ -443,7 +457,7 @@ inst2_p2="""; exec bash\"' """
 
 inst2_frame = Frame(tab2, borderwidth=0, background='#333333',highlightthickness=0)
 #ess_frame.place(x=3,y=250)
-inst2_frame.pack(anchor="nw",pady=50)
+inst2_frame.pack(anchor="nw")
 
 
 def inst_btn2():
