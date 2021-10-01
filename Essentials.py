@@ -20,7 +20,6 @@ import distro
 
 popen("xterm -e 'bash -c \"apt-cache pkgnames > ~/PDL/essentials/SomeFile.txt && exit; exec bash\"'")
 
-
 popen("dpkg --get-selections > ~/PDL/essentials/packages.list")
 #os.system("sed -e s/install//g -i /home/timo/PiGro-Aid-/essentials/packages.list")
 popen("xterm -e 'bash -c \"sed -e s/install//g -i ~/PDL/essentials/packages.list && exit; exec bash\"'")
@@ -71,7 +70,7 @@ tab3 = ttk.Frame(tab_control)
 
 ########################
 tab_control.add(tab1, compound=LEFT, text='Start')
-tab_control.add(tab2, compound=LEFT, text='Search & Install')
+tab_control.add(tab2, compound=LEFT, text='Install / Uninstall')
 tab_control.add(tab3, compound=LEFT, text='Here will be sth')
 #####################################################################################################
 #apps
@@ -176,6 +175,15 @@ def pop_pi_imager():
     
     pi_info = Label(pi_imager, text="BleachBit has many useful features designed to help you\neasily clean your computer to free space and maintain privacy.", anchor="w",
                   highlightthickness=0, borderwidth=0, background='#333333', foreground="white", compound=TOP).grid(column=1, row=0,rowspan=2)
+    
+    
+    
+def inst_inf1():
+    messagebox.showinfo("You called for help?", "The list contains all available packages. Yes, even the ones you added yourself! You can either search with the mouse wheel or type the desired package into the search bar. Click on the desired packet and press install.")
+
+def inst_inf2():
+    messagebox.showinfo("What is it?", "The list contains all installed packages. ALL! You can either search with the mouse wheel or type the desired package into the search bar. Click on the desired packet and press uninstall.")
+    
 #####################################################################################################
 tab_tp1 = Image.open('icons/Essentials.png')
 tp01 = ImageTk.PhotoImage(tab_tp1)
@@ -188,17 +196,11 @@ tab_ip1 = Image.open('essentials/Albert/albert-icon.png')
 ip01 = ImageTk.PhotoImage(tab_ip1)
 il01 = Label(image=ip01)
 
-tab_ip2 = Image.open('essentials/Bleach_Bit/bleachbit_icon.png')
-ip02 = ImageTk.PhotoImage(tab_ip2)
-il02 = Label(image=ip02)
+
 
 tab_ip3 = Image.open('essentials/btop++/logo.png')
 ip03 = ImageTk.PhotoImage(tab_ip3)
 il03 = Label(image=ip03)
-
-tab_ip4 = Image.open('essentials/Compiz/compiz_icon.png')
-ip04 = ImageTk.PhotoImage(tab_ip4)
-il04 = Label(image=ip04)
 
 tab_ip5 = Image.open('essentials/DeskPi_Pro_Driver/DeskpiPro_icon.png')
 ip05 = ImageTk.PhotoImage(tab_ip5)
@@ -208,62 +210,33 @@ tab_ip6 = Image.open('essentials/FanShim_Driver/shim_icon.png')
 ip06 = ImageTk.PhotoImage(tab_ip6)
 il06 = Label(image=ip06)
 
-tab_ip7 = Image.open('essentials/Gnome-Pie/gnome_pie_icon.png')
-ip07 = ImageTk.PhotoImage(tab_ip7)
-il07 = Label(image=ip07)
-
-tab_ip8 = Image.open('essentials/Gparted/gparted_icon.png')
-ip08 = ImageTk.PhotoImage(tab_ip8)
-il08 = Label(image=ip08)
-
-tab_ip9 = Image.open('essentials/Lutris/lutris_icon.png')
-ip09 = ImageTk.PhotoImage(tab_ip9)
-il09 = Label(image=ip09)
-
-tab_ip10 = Image.open('essentials/NeoFetch/neofetch_icon.png')
-ip10 = ImageTk.PhotoImage(tab_ip10)
-il10 = Label(image=ip10)
-
 tab_ip11 = Image.open('essentials/Pi-Apps/proglogo.png')
 ip11 = ImageTk.PhotoImage(tab_ip11)
 il11 = Label(image=ip11)
-
-tab_ip12 = Image.open('essentials/Pi_Imager/Raspberry-Pi-Imager.png')
-ip12 = ImageTk.PhotoImage(tab_ip12)
-il12 = Label(image=ip12)
 
 tab_ip13 = Image.open('essentials/PiKiss/logo_pikiss_header.png')
 ip13 = ImageTk.PhotoImage(tab_ip13)
 il13 = Label(image=ip13)
 
-tab_ip14 = Image.open('essentials/Synaptic/debian-pkg-icon.png')
-ip14 = ImageTk.PhotoImage(tab_ip14)
-il14 = Label(image=ip14)
-
-tab_ip15 = Image.open('essentials/Plank/plank-64.png')
-ip15 = ImageTk.PhotoImage(tab_ip15)
-il15 = Label(image=ip15)
-
-tab_ip16 = Image.open('essentials/Samba/samba.png')
-ip16 = ImageTk.PhotoImage(tab_ip16)
-il16 = Label(image=ip16)
-
 tab_ip17 = Image.open('essentials/Tetris-CLI/tetris.png')
 ip17 = ImageTk.PhotoImage(tab_ip17)
 il17 = Label(image=ip17)
-
-tab_ip18 = Image.open('essentials/Tilix/tilix-icon.png')
-ip18 = ImageTk.PhotoImage(tab_ip18)
-il18 = Label(image=ip18)
-
-tab_ip19 = Image.open('essentials/Vulkan_Driver/vulkan_icon.png')
-ip19 = ImageTk.PhotoImage(tab_ip19)
-il19 = Label(image=ip19)
 
 tab_ip20 = Image.open('essentials/Argon_One_Driver/argon_icon.png')
 ip20 = ImageTk.PhotoImage(tab_ip20)
 il20 = Label(image=ip20)
 
+tab_ip21 = Image.open('icons/info_button.png')
+ip21 = ImageTk.PhotoImage(tab_ip21)
+il21 = Label(image=ip21)
+
+tab_ip22 = Image.open('essentials/Sublime/sublime_text.png')
+ip22 = ImageTk.PhotoImage(tab_ip22)
+il22 = Label(image=ip22)
+
+tab_ip23 = Image.open('essentials/Sublime/sublime_merge.png')
+ip23 = ImageTk.PhotoImage(tab_ip23)
+il23 = Label(image=ip23)
 
 
 #####################################################################TAB1
@@ -271,7 +244,7 @@ ess_lbl = Label(tab1, image=tp01, borderwidth=0, background='white',highlightthi
 #ess_lbl.place(x=13,y=50)
 ess_lbl.pack(pady=50)
 
-Sugg = Label(tab1, width=105, text="Suggestions:",font=("Helvetica",16), anchor="w",
+Sugg = Label(tab1, width=105, text="Cool Staff that is not in the standard Respository:",font=("Helvetica",16), anchor="w",
                   highlightthickness=0, borderwidth=1, background='#333333', foreground="white").pack(padx=10)
 
 ess_frame = Frame(tab1, borderwidth=0, background='#333333',highlightthickness=0)
@@ -279,78 +252,56 @@ ess_frame = Frame(tab1, borderwidth=0, background='#333333',highlightthickness=0
 ess_frame.pack()
 
 
-shop_btn2 = Button(ess_frame, width=105, image=ip04, text="Compiz",font=("Helvetica",11,"bold"), anchor="n",
-                  highlightthickness=0, borderwidth=1, background='#434343', foreground="white", compound=TOP,command=pop_compiz).grid(column=0, row=0, padx=5,pady=5)
+shop_btn01 = Button(ess_frame, width=105, image=ip03, text="btop++", anchor="n", highlightthickness=0,
+                  borderwidth=1, background='#434343', foreground="white", compound=TOP,font=("Helvetica",11,"bold")).grid(column=0, row=0,pady=5, padx=5)
 
-shop_btn3 = Button(ess_frame, width=105, image=ip08, text="Gparted", anchor="n",
-                  highlightthickness=0, borderwidth=1, background='#434343', foreground="white", compound=TOP,font=("Helvetica",11,"bold"),command=pop_gparted).grid(column=1, row=0,pady=5, padx=5)
+shop_btn01 = Button(ess_frame, width=105, image=ip20, text="Argon One Driver", anchor="n", highlightthickness=0,
+                  borderwidth=1, background='#434343', foreground="white", compound=TOP,font=("Helvetica",11,"bold")).grid(column=1, row=0,pady=5, padx=5)
 
-shop_btn4 = Button(ess_frame, width=105, image=ip10, text="NeoFetch", anchor="n", highlightthickness=0,
-                  borderwidth=1, background='#434343', foreground="white", compound=TOP,font=("Helvetica",11,"bold"),command=pop_neofetch).grid(column=2, row=0,pady=5, padx=5)
+shop_btn03 = Button(ess_frame, width=105, image=ip05, text="DeskPi Pro Driver", anchor="n", highlightthickness=0,
+                  borderwidth=1, background='#434343', foreground="white", compound=TOP,font=("Helvetica",11,"bold")).grid(column=2, row=0,pady=5, padx=5)
 
-shop_btn5 = Button(ess_frame, width=105, image=ip13, text="PiKiss", anchor="n", highlightthickness=0,
-                  borderwidth=1, background='#434343', foreground="white", compound=TOP,font=("Helvetica",11,"bold"),command=pop_pikiss).grid(column=3, row=0,pady=5, padx=5)
+shop_btn04 = Button(ess_frame, width=105, image=ip06, text="FanShim Driver", anchor="n", highlightthickness=0,
+                  borderwidth=1, background='#434343', foreground="white", compound=TOP,font=("Helvetica",11,"bold")).grid(column=3, row=0,pady=5, padx=5)
 
-shop_btn6 = Button(ess_frame, width=105, image=ip02, text="Bleach Bit", anchor="n",highlightthickness=0, borderwidth=1, background='#434343', foreground="white",
-                   compound=TOP,font=("Helvetica",11,"bold"), command=pop_bleachbit).grid(column=4, row=0,pady=5, padx=5)
+shop_btn05 = Button(ess_frame, width=105, image=ip13, text="PiKiss", anchor="n", highlightthickness=0,
+                  borderwidth=1, background='#434343', foreground="white", compound=TOP,font=("Helvetica",11,"bold"),command=pop_pikiss).grid(column=4, row=0,pady=5, padx=5)
 
-shop_btn7 = Button(ess_frame, width=105, image=ip12, text="Pi Imager", anchor="n", highlightthickness=0,
-                  borderwidth=1, background='#434343', foreground="white", compound=TOP,font=("Helvetica",11,"bold"),command=pop_pi_imager).grid(column=5, row=0,pady=5, padx=5)
+shop_btn06 = Button(ess_frame, width=105, image=ip11, text="Pi-Apps", anchor="n", highlightthickness=0,
+                  borderwidth=1, background='#434343', foreground="white", compound=TOP,font=("Helvetica",11,"bold")).grid(column=0, row=1,pady=0, padx=5)
 
-shop_btn8 = Button(ess_frame, width=105, image=ip14, text="Synaptic", anchor="n", highlightthickness=0,
-                  borderwidth=1, background='#434343', foreground="white", compound=TOP,font=("Helvetica",11,"bold")).grid(column=0, row=1,pady=5, padx=5)
+shop_btn07 = Button(ess_frame, width=105, image=ip17, text="Tetris-CLI", anchor="n", highlightthickness=0,
+                  borderwidth=1, background='#434343', foreground="white", compound=TOP,font=("Helvetica",11,"bold")).grid(column=1, row=1,pady=1, padx=5)
 
-shop_btn9 = Button(ess_frame, width=105, image=ip07, text="Gnome-Pie", anchor="n", highlightthickness=0,
-                  borderwidth=1, background='#434343', foreground="white", compound=TOP,font=("Helvetica",11,"bold")).grid(column=1, row=1,pady=5, padx=5)
+shop_btn08 = Button(ess_frame, width=105, image=ip01, text="Albert", anchor="n", highlightthickness=0,
+                  borderwidth=1, background='#434343', foreground="white", compound=TOP,font=("Helvetica",11,"bold")).grid(column=2, row=1,pady=2, padx=5)
 
-shop_btn10 = Button(ess_frame, width=105, image=ip11, text="Pi-Apps", anchor="n", highlightthickness=0,
-                  borderwidth=1, background='#434343', foreground="white", compound=TOP,font=("Helvetica",11,"bold")).grid(column=2, row=1,pady=5, padx=5)
+shop_btn09 = Button(ess_frame, width=105, image=ip23, text="Sublime Merge 64 Bit", anchor="n", highlightthickness=0,
+                  borderwidth=1, background='#434343', foreground="white", compound=TOP,font=("Helvetica",9,"bold")).grid(column=3, row=1,pady=2, padx=5)
 
-shop_btn22 = Button(ess_frame, width=105, image=ip03, text="btop++", anchor="n", highlightthickness=0,
-                  borderwidth=1, background='#434343', foreground="white", compound=TOP,font=("Helvetica",11,"bold")).grid(column=3, row=1,pady=5, padx=5)
-
-shop_btn22 = Button(ess_frame, width=105, image=ip06, text="FanShim Driver", anchor="n", highlightthickness=0,
-                  borderwidth=1, background='#434343', foreground="white", compound=TOP,font=("Helvetica",11,"bold")).grid(column=4, row=1,pady=5, padx=5)
-
-shop_btn15 = Button(ess_frame, width=105, image=ip17, text="Tetris-CLI", anchor="n", highlightthickness=0,
-                  borderwidth=1, background='#434343', foreground="white", compound=TOP,font=("Helvetica",11,"bold")).grid(column=5, row=1,pady=5, padx=5)
-
-shop_btn16 = Button(ess_frame, width=105, image=ip20, text="Argon One Driver", anchor="n", highlightthickness=0,
-                  borderwidth=1, background='#434343', foreground="white", compound=TOP,font=("Helvetica",11,"bold")).grid(column=0, row=2,pady=5, padx=5)
-
-shop_btn17 = Button(ess_frame, width=105, image=ip05, text="DeskPi Pro Driver", anchor="n", highlightthickness=0,
-                  borderwidth=1, background='#434343', foreground="white", compound=TOP,font=("Helvetica",11,"bold")).grid(column=1, row=2,pady=5, padx=5)
-
-shop_btn18 = Button(ess_frame, width=105, image=ip15, text="Plank", anchor="n", highlightthickness=0,
-                  borderwidth=1, background='#434343', foreground="white", compound=TOP,font=("Helvetica",11,"bold")).grid(column=2, row=2,pady=5, padx=5)
-
-shop_btn19 = Button(ess_frame, width=105, image=ip01, text="Albert", anchor="n", highlightthickness=0,
-                  borderwidth=1, background='#434343', foreground="white", compound=TOP,font=("Helvetica",11,"bold")).grid(column=3, row=2,pady=5, padx=5)
-
-shop_btn20 = Button(ess_frame, width=105, image=ip18, text="Tilix", anchor="n", highlightthickness=0,
-                  borderwidth=1, background='#434343', foreground="white", compound=TOP,font=("Helvetica",11,"bold")).grid(column=4, row=2,pady=5, padx=5)
-
-shop_btn21 = Button(ess_frame, width=105, image=ip16, text="Samba", anchor="n", highlightthickness=0,
-                  borderwidth=1, background='#434343', foreground="white", compound=TOP,font=("Helvetica",11,"bold")).grid(column=5, row=2,pady=5, padx=5)
+shop_btn10 = Button(ess_frame, width=105, image=ip22, text="Sublime Text 64 Bit", anchor="n", highlightthickness=0,
+                  borderwidth=1, background='#434343', foreground="white", compound=TOP,font=("Helvetica",9,"bold")).grid(column=4, row=1,pady=2, padx=5)
 
 #####################################################################################################TAB2
+i = Image.open('icons/pigro_bg.png')
+p = ImageTk.PhotoImage(i)
+l = Label(tab2, image=p)
+l.image = p
+l['background'] = '#333333'
+l.place(x=0, y=10)
+
 inst0_frame = Frame(tab2, borderwidth=0, background='#333333',highlightthickness=0)
 #ess_frame.place(x=3,y=250)
-inst0_frame.pack(anchor="nw")
+inst0_frame.pack(anchor="nw",pady=10)
 
-info_inst0= Label(inst0_frame, width=105, text="A list of all installed packages. You can scroll through the list or search using the enrty field.",font=("Helvetica",14,"bold"), anchor="n",
-                  highlightthickness=0, borderwidth=1, background='#333333', foreground="white", compound=TOP).pack()
 
-inst1_frame = Frame(tab2, borderwidth=0, background='#333333',highlightthickness=0)
+
+inst1_frame = Frame(tab2, borderwidth=0, background='#333333',highlightthickness=2,padx=10,pady=10)
 #ess_frame.place(x=3,y=250)
-inst1_frame.pack(anchor="nw",pady=20)
+inst1_frame.pack(anchor="n")
 
-# i = Image.open('icons/inst_bg.png')
-# p = ImageTk.PhotoImage(i)
-# l = Label(inst1_frame, image=p)
-# l.image = p
-# l['background'] = '#333333'
-# l.place(x=0, y=0)
+info_inst0= Button(inst1_frame, image=ip21,anchor="n",
+                  highlightthickness=0, borderwidth=0, background='#333333',command=inst_inf1).grid(row=1,rowspan=1,column=0)
 
 
 
@@ -410,7 +361,7 @@ print (content)
 #my_label.pack(pady=20)
 
 
-inst_btn = Button(inst1_frame, text="install", command=inst_btn1, highlightthickness=0, borderwidth=0,width=10,
+inst_btn = Button(inst1_frame, text="install", command=inst_btn1, highlightthickness=2, borderwidth=0,width=10,
                         background='#333333', foreground="white",font=(("Helvetica,bold"),"12"))        
 
 inst_btn.grid(row=0, column=0)
@@ -418,13 +369,13 @@ inst_btn.grid(row=0, column=0)
 
 # Create an entry box
 
-my_entry = Entry(inst1_frame,font=("Helvetica",12), width=40)
+my_entry = Entry(inst1_frame,font=("Helvetica",12), width=60)
 my_entry.grid(row=0, column=1)
 
-my_list = Listbox(inst1_frame, width=40)
-my_list.grid(row=0,rowspan=8, column=2,padx=10)
+my_list = Listbox(inst1_frame, width=67)
+my_list.grid(row=1, column=1,padx=10)
 
-fo = open("essentials/SomeFile.txt", "r")
+fo = open("essentials/SomeFile.txt","r")
 content = fo.readlines()
 for i,s in enumerate(content):
     content[i] = s.strip()
@@ -442,12 +393,11 @@ my_list.bind("<<ListboxSelect>>", fillout )
 my_entry.bind("<KeyRelease>", check)
 
 ################################################################################
-inst0x_frame = Frame(tab2, borderwidth=0, background='#333333',highlightthickness=0)
-#ess_frame.place(x=3,y=250)
-inst0x_frame.pack(anchor="nw",pady=20)
 
-info_inst0= Label(inst0x_frame, width=105, text="A list of all installed packages. You can scroll through the list or search using the enrty field.",font=("Helvetica",14,"bold"), anchor="n",
-                  highlightthickness=0, borderwidth=1, background='#333333', foreground="white", compound=TOP).pack()
+
+
+
+
 #############################################################################inst2
 #############################################################################
 inst2_p1=""" xterm -e 'bash -c \"sudo apt purge """
@@ -455,9 +405,9 @@ inst2_p2="""; exec bash\"' """
 
 
 
-inst2_frame = Frame(tab2, borderwidth=0, background='#333333',highlightthickness=0)
+inst2_frame = Frame(tab2, borderwidth=0, background='#333333',highlightthickness=2,pady=10,padx=10)
 #ess_frame.place(x=3,y=250)
-inst2_frame.pack(anchor="nw")
+inst2_frame.pack(anchor="n",pady=10)
 
 
 def inst_btn2():
@@ -506,19 +456,20 @@ fo2 = open("essentials/packages.list", "r")
 content2 = fo2.readlines()
 print (content2)
 
-inst_btn2 = Button(inst2_frame, text="uninstall", command=inst_btn2, highlightthickness=0, borderwidth=0,width=10,
+inst_btn2 = Button(inst2_frame, text="uninstall", command=inst_btn2, highlightthickness=2, borderwidth=0,width=10,
                         background='#333333', foreground="white",font=(("Helvetica,bold"),"12"))        
 
 inst_btn2.grid(row=0, column=0)
 
-
+info_inst1= Button(inst2_frame, image=ip21,anchor="n",
+                  highlightthickness=0, borderwidth=0, background='#333333',command=inst_inf2).grid(row=1,rowspan=1,column=0)
 # Create an entry box
 
-my_entry2 = Entry(inst2_frame,font=("Helvetica",12), width=40)
+my_entry2 = Entry(inst2_frame,font=("Helvetica",12), width=60)
 my_entry2.grid(row=0, column=1)
 
-my_list2 = Listbox(inst2_frame, width=40)
-my_list2.grid(row=0,rowspan=8, column=2,padx=10)
+my_list2 = Listbox(inst2_frame, width=67)
+my_list2.grid(row=1, column=1,padx=10)
 
 fo2 = open("essentials/packages.list", "r")
 content2 = fo2.readlines()
