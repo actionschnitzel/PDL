@@ -91,11 +91,98 @@ def pop_compiz():
     
     comp_info = Label(compiz, text="Compiz is a compositing window manager for the X Window System,\nusing 3D graphics hardware to create fast \ncompositing desktop effects for window management.\nEffects, such as a minimization animation or a cube workspace,\nare implemented as loadable plugins.", anchor="w",
                   highlightthickness=0, borderwidth=0, background='#333333', foreground="white", compound=TOP).grid(column=1, row=0,rowspan=2)
+    
+def pop_gparted():
+    global gparted
+    gparted=Toplevel()
+    gparted['background'] = '#333333'
+      
+    logo = Label(gparted, image=ip08, text="Gparted",font=("Helvetica",16), anchor="w",
+                  highlightthickness=0, borderwidth=0, background='#333333', foreground="white", compound=TOP).grid(column=0, row=0)
+    
+    gp_inst = Button(gparted, text="Install", anchor="w",
+                  highlightthickness=0, borderwidth=0, background='#333333', foreground="white", compound=LEFT).grid(column=0, row=1)
+    
+    gp_uninst = Button(gparted, text="Uninstall", anchor="w",
+                  highlightthickness=0, borderwidth=0, background='#333333', foreground="white", compound=LEFT).grid(column=0, row=2)
+    
+    gp_info = Label(gparted, text="GParted is a free partition editor for graphically managing your disk partitions.", anchor="w",
+                  highlightthickness=0, borderwidth=0, background='#333333', foreground="white", compound=TOP).grid(column=1, row=0,rowspan=2)
+    
+def pop_neofetch():
+    global neofetch
+    neofetch=Toplevel()
+    neofetch['background'] = '#333333'
+      
+    logo = Label(neofetch, image=ip10, text="Neofetch",font=("Helvetica",16), anchor="w",
+                  highlightthickness=0, borderwidth=0, background='#333333', foreground="white", compound=TOP).grid(column=0, row=0)
+    
+    nf_inst = Button(neofetch, text="Install", anchor="w",
+                  highlightthickness=0, borderwidth=0, background='#333333', foreground="white", compound=LEFT).grid(column=0, row=1)
+    
+    nf_uninst = Button(neofetch, text="Uninstall", anchor="w",
+                  highlightthickness=0, borderwidth=0, background='#333333', foreground="white", compound=LEFT).grid(column=0, row=2)
+    
+    nf_info = Label(neofetch, text="Neofetch is a command-line system information tool written in bash 3.2+.\nNeofetch displays information about your operating system,\nsoftware and hardware in an aesthetic\nand visually pleasing way.", anchor="w", highlightthickness=0, borderwidth=0, background='#333333', foreground="white", compound=TOP).grid(column=1, row=0,rowspan=2)
+    
+def pop_pikiss():
+    global pikiss
+    pikiss=Toplevel()
+    pikiss['background'] = '#333333'
+      
+    logo = Label(pikiss, image=ip13, text="PiKiss",font=("Helvetica",16), anchor="w",
+                  highlightthickness=0, borderwidth=0, background='#333333', foreground="white", compound=TOP).grid(column=0, row=0)
+    
+    pk_inst = Button(pikiss, text="Install", anchor="w",
+                  highlightthickness=0, borderwidth=0, background='#333333', foreground="white", compound=LEFT).grid(column=0, row=1)
+    
+    pk_uninst = Button(pikiss, text="Uninstall", anchor="w",
+                  highlightthickness=0, borderwidth=0, background='#333333', foreground="white", compound=LEFT).grid(column=0, row=2)
+    
+    pk_info = Label(pikiss, text="Installing an application on Linux is not a complex task.\nSometimes you just type sudo apt install and get\n the application installed with all of its dependencies.\nBut... What if we need to install more than one app\n such as a web server or it requires many steps to complete\nthe install process? Is it not in the\n official repositories? What if you want to get rid of input commands?", anchor="w",
+                  highlightthickness=0, borderwidth=0, background='#333333', foreground="white", compound=TOP).grid(column=1, row=0,rowspan=2)
 
+
+def pop_bleachbit():
+    global bleachbit
+    bleachbit=Toplevel()
+    bleachbit['background'] = '#333333'
+      
+    logo = Label(bleachbit, image=ip02, text="Gparted",font=("Helvetica",16), anchor="w",
+                  highlightthickness=0, borderwidth=0, background='#333333', foreground="white", compound=TOP).grid(column=0, row=0)
+    
+    bb_inst = Button(bleachbit, text="Install", anchor="w",
+                  highlightthickness=0, borderwidth=0, background='#333333', foreground="white", compound=LEFT).grid(column=0, row=1)
+    
+    bb_uninst = Button(bleachbit, text="Uninstall", anchor="w",
+                  highlightthickness=0, borderwidth=0, background='#333333', foreground="white", compound=LEFT).grid(column=0, row=2)
+    
+    bb_info = Label(bleachbit, text="BleachBit has many useful features designed to help you\neasily clean your computer to free space and maintain privacy.", anchor="w",
+                  highlightthickness=0, borderwidth=0, background='#333333', foreground="white", compound=TOP).grid(column=1, row=0,rowspan=2)
+    
+def pop_pi_imager():
+    global pi_imager
+    pi_imager=Toplevel()
+    pi_imager['background'] = '#333333'
+      
+    logo = Label(pi_imager, image=ip12, text="Gparted",font=("Helvetica",16), anchor="w",
+                  highlightthickness=0, borderwidth=0, background='#333333', foreground="white", compound=TOP).grid(column=0, row=0)
+    
+    pi_inst = Button(pi_imager, text="Install", anchor="w",
+                  highlightthickness=0, borderwidth=0, background='#333333', foreground="white", compound=LEFT).grid(column=0, row=1)
+    
+    pi_uninst = Button(pi_imager, text="Uninstall", anchor="w",
+                  highlightthickness=0, borderwidth=0, background='#333333', foreground="white", compound=LEFT).grid(column=0, row=2)
+    
+    pi_info = Label(pi_imager, text="BleachBit has many useful features designed to help you\neasily clean your computer to free space and maintain privacy.", anchor="w",
+                  highlightthickness=0, borderwidth=0, background='#333333', foreground="white", compound=TOP).grid(column=1, row=0,rowspan=2)
 #####################################################################################################
 tab_tp1 = Image.open('icons/Essentials.png')
 tp01 = ImageTk.PhotoImage(tab_tp1)
 tl01 = Label(image=tp01)
+
+
+
 #####################################################################################################
 tab_ip1 = Image.open('essentials/Albert/albert-icon.png')
 ip01 = ImageTk.PhotoImage(tab_ip1)
@@ -196,19 +283,19 @@ shop_btn2 = Button(ess_frame, width=105, image=ip04, text="Compiz",font=("Helvet
                   highlightthickness=0, borderwidth=1, background='#434343', foreground="white", compound=TOP,command=pop_compiz).grid(column=0, row=0, padx=5,pady=5)
 
 shop_btn3 = Button(ess_frame, width=105, image=ip08, text="Gparted", anchor="n",
-                  highlightthickness=0, borderwidth=1, background='#434343', foreground="white", compound=TOP,font=("Helvetica",11,"bold")).grid(column=1, row=0,pady=5, padx=5)
+                  highlightthickness=0, borderwidth=1, background='#434343', foreground="white", compound=TOP,font=("Helvetica",11,"bold"),command=pop_gparted).grid(column=1, row=0,pady=5, padx=5)
 
 shop_btn4 = Button(ess_frame, width=105, image=ip10, text="NeoFetch", anchor="n", highlightthickness=0,
-                  borderwidth=1, background='#434343', foreground="white", compound=TOP,font=("Helvetica",11,"bold")).grid(column=2, row=0,pady=5, padx=5)
+                  borderwidth=1, background='#434343', foreground="white", compound=TOP,font=("Helvetica",11,"bold"),command=pop_neofetch).grid(column=2, row=0,pady=5, padx=5)
 
 shop_btn5 = Button(ess_frame, width=105, image=ip13, text="PiKiss", anchor="n", highlightthickness=0,
-                  borderwidth=1, background='#434343', foreground="white", compound=TOP,font=("Helvetica",11,"bold")).grid(column=3, row=0,pady=5, padx=5)
+                  borderwidth=1, background='#434343', foreground="white", compound=TOP,font=("Helvetica",11,"bold"),command=pop_pikiss).grid(column=3, row=0,pady=5, padx=5)
 
 shop_btn6 = Button(ess_frame, width=105, image=ip02, text="Bleach Bit", anchor="n",highlightthickness=0, borderwidth=1, background='#434343', foreground="white",
-                   compound=TOP,font=("Helvetica",11,"bold")).grid(column=4, row=0,pady=5, padx=5)
+                   compound=TOP,font=("Helvetica",11,"bold"), command=pop_bleachbit).grid(column=4, row=0,pady=5, padx=5)
 
 shop_btn7 = Button(ess_frame, width=105, image=ip12, text="Pi Imager", anchor="n", highlightthickness=0,
-                  borderwidth=1, background='#434343', foreground="white", compound=TOP,font=("Helvetica",11,"bold")).grid(column=5, row=0,pady=5, padx=5)
+                  borderwidth=1, background='#434343', foreground="white", compound=TOP,font=("Helvetica",11,"bold"),command=pop_pi_imager).grid(column=5, row=0,pady=5, padx=5)
 
 shop_btn8 = Button(ess_frame, width=105, image=ip14, text="Synaptic", anchor="n", highlightthickness=0,
                   borderwidth=1, background='#434343', foreground="white", compound=TOP,font=("Helvetica",11,"bold")).grid(column=0, row=1,pady=5, padx=5)
@@ -251,7 +338,12 @@ inst1_frame = Frame(tab2, borderwidth=0, background='#333333',highlightthickness
 #ess_frame.place(x=3,y=250)
 inst1_frame.pack(anchor="nw",pady=20)
 
-
+# i = Image.open('icons/inst_bg.png')
+# p = ImageTk.PhotoImage(i)
+# l = Label(inst1_frame, image=p)
+# l.image = p
+# l['background'] = '#333333'
+# l.place(x=0, y=0)
 
 
 

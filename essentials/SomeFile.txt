@@ -266,6 +266,7 @@ libmkl-scalapack-lp64
 surfraw-extra
 librust-hyper+futures-cpupool-dev
 libgme-dev
+openjdk-17-jdk-headless
 librime-data-combo-pinyin
 python3-cec
 eggdrop-data
@@ -19552,6 +19553,7 @@ openstack-dashboard-ubuntu-theme
 fpc
 libgpiv3
 sqldeveloper-package
+openjdk-17-jre-headless
 gnubg-data
 pwget
 ext3grep
@@ -22950,6 +22952,7 @@ ondir
 ranger
 ruby-ftw
 hspec-discover
+openjdk-17-dbg
 libparsexp-ocaml-dev
 ukopp
 libolm3
@@ -23505,6 +23508,7 @@ libgcc-10-dev-sparc64-cross
 libnxt
 istgt
 ftpmirror
+openjdk-17-doc
 calligra
 wbritish-huge
 python-caja-common
@@ -31931,6 +31935,7 @@ gobjc-9-s390x-linux-gnu
 r-cran-mixtools
 catkin-lint
 snakemake
+openjdk-17-jdk
 libghc-kan-extensions-prof
 rrootage
 gambas3-gb-util-web
@@ -32535,6 +32540,7 @@ linux-cloud-tools-gkeop-5.4
 libplexus-container-default1.5-java
 tinymce
 dita-ot
+openjdk-17-jre
 libghc-brainfuck-dev
 gforth
 tomcat9-admin
@@ -37639,6 +37645,7 @@ acl2-infix
 opendrim-lmp-pci
 libtrilinos-nox-dev
 symmetrica-doc
+openjdk-17-source
 libcourier-unicode4
 gambas3-gb-form-terminal
 golang-gopkg-jarcoal-httpmock.v1-dev
@@ -48816,6 +48823,7 @@ libghc-ed25519-dev
 gambas3-gb-db-postgresql
 avahi-autoipd
 libcufftw10
+openjdk-17-demo
 libstdc++-8-pic-ppc64-cross
 granule-docs
 bzflag-server
@@ -50512,6 +50520,7 @@ libghc-configurator-doc
 golang-go.uber-multierr-dev
 g15daemon
 matlab2tikz
+openjdk-17-jre-zero
 libpod-wordlist-hanekomu-perl
 libghc-map-syntax-prof
 libjs-jquery-countdown
