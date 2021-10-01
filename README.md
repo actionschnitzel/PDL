@@ -11,7 +11,7 @@ Then I thought Add / Remove Software hardly has any programs
 Then I thought Gnome software was pretty cool ...    
     
 # Note: This software is far from ready    
-    
+[x] Install/Uninstall worx!!!111   
 Useage:
 ```
 sudo apt-get install xterm -y    
