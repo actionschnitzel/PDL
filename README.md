@@ -13,7 +13,7 @@ Then I thought Gnome software was pretty cool ...
 # Note: This software is far from ready    
 [x] Install/Uninstall worx!!!111    
 [] Replace Dummies on Start Tab    
-[x] Git&PPS test    
+[x] Git&PPA test    
 	- select Example_app    
 	- click INstall    
 	- Terminal shows: It is alive!    
