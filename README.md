@@ -11,14 +11,15 @@ Then I thought Add / Remove Software hardly has any programs ...
 Then I thought Gnome software was pretty cool ...    
     
 # Note: This software is far from ready    
-[x] Install/Uninstall worx!!!111
-[] Replace Dummies on Start Tab
-[x] Git&PPS test
-	- select Example_app
-	- click INstall
-	- Terminal shows: It is alive!
-	- if yes: success
-	- if not hmmmmm :-/
+[x] Install/Uninstall worx!!!111    
+[] Replace Dummies on Start Tab    
+[x] Git&PPS test    
+	- select Example_app    
+	- click INstall    
+	- Terminal shows: It is alive!    
+	- if yes: success    
+	- if not hmmmmm :-/    
+
 Useage:
 ```
 sudo apt-get install xterm -y    
@@ -28,7 +29,7 @@ sudo apt install python3-pip -y
 
 
 ```
-$ python3 home/pi/PDL/Essentials.py
+$ python3 home/pi/PDL/PDL.py
 ```
     
 Add your own apps:    
@@ -46,3 +47,4 @@ Add your own apps:
 
 ![GUI](https://github.com/actionschnitzel/PDL/blob/main/1.png)
 ![GUI](https://github.com/actionschnitzel/PDL/blob/main/2.png)
+![GUI](https://github.com/actionschnitzel/PDL/blob/main/3.png)
