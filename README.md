@@ -14,11 +14,11 @@ Then I thought Gnome software was pretty cool ...
 [x] Install/Uninstall worx!!!111
 [] Replace Dummies on Start Tab
 [x] Git&PPS test
-	- select btop++
-	- click Test Bomb
+	- select Example_app
+	- click INstall
 	- Terminal shows: It is alive!
 	- if yes: success
-	- if not chmod +x cd ~/PDL/essentials/btop++/install.sh
+	- if not hmmmmm :-/
 Useage:
 ```
 sudo apt-get install xterm -y    
@@ -30,5 +30,19 @@ sudo apt install python3-pip -y
 ```
 $ python3 home/pi/PDL/Essentials.py
 ```
+    
+Add your own apps:    
+    
+1.create a folder with "APP_NAME" in:    
+    
+~/PDL/essentals/
+
+2. The folder must conain:    
+	- install.sh [with the whole install parameters]    
+	- uninstall.sh [with the whole uninstall parameters]    
+
+3. Done
+
+
 ![GUI](https://github.com/actionschnitzel/PDL/blob/main/1.png)
 ![GUI](https://github.com/actionschnitzel/PDL/blob/main/2.png)

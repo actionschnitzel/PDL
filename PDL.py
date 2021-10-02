@@ -26,6 +26,10 @@ os.system("xterm -e 'bash -c \"sed -e s/install//g -i ~/PDL/essentials/packages.
 
 os.system("xterm -e 'bash -c \"cd ~/PDL/essentials/ && ls -d */ | cut -f1 -d'/' > apps.txt && exit; exec bash\"'")
 
+os.system("find ~/PDL/essentials -type f -exec chmod +x {} \;")
+
+
+
 
 
 
@@ -35,7 +39,7 @@ main = Tk()
 main.title("PDL (Pacchetti di Lamponi) v. ALPHA 0.00001 --Standalone-Version--")
 icon = tk.PhotoImage(file="icons/PiGroLogoslim.png")
 main.tk.call('wm', 'iconphoto', main._w, icon)
-#main['background'] = '#dadada'
+#main['background'] = '#191925'
 main.resizable(0, 0)
 
 
@@ -57,12 +61,12 @@ main.wm_attributes('-alpha', 0.95, )
 ###########################################TABCONT
 #Notebook Style
 noteStyler = ttk.Style()
-noteStyler.configure("TNotebook", borderwidth=0, tabposition='nw',highlightthickness=0, background="#dadada") #
-noteStyler.configure("TNotebook.Tab", borderwidth=0, foreground="black",font=("Helvetica",12),highlightthickness=0, background="#dadada",side="LEFT") #
-noteStyler.configure("TFrame", background="#dadada") #
+noteStyler.configure("TNotebook", borderwidth=0, tabposition='nw',highlightthickness=0, background="#191925") #
+noteStyler.configure("TNotebook.Tab", borderwidth=0, foreground="white",font=("Helvetica",12),highlightthickness=0, background="#191925",side="LEFT") #
+noteStyler.configure("TFrame", background="#191925") #
 
 
-noteStyler.map("TNotebook.Tab", background=[("selected", "#dadada")], foreground=[("selected", "#d4244d")]);
+noteStyler.map("TNotebook.Tab", background=[("selected", "#191925")], foreground=[("selected", "#d4244d")]);
 
 tab_control = ttk.Notebook(main)
 
@@ -82,71 +86,78 @@ tab_ip27 = Image.open('icons/apt.png')
 ip27 = ImageTk.PhotoImage(tab_ip27)
 il27 = Label(image=ip27)
 
+tab_ip28 = Image.open('icons/install_btn.png')
+ip28 = ImageTk.PhotoImage(tab_ip28)
+il28 = Label(image=ip28)
+
+tab_ip29 = Image.open('icons/uninstall_btn.png')
+ip29 = ImageTk.PhotoImage(tab_ip29)
+il29 = Label(image=ip29)
 ########################
-tab_control.add(tab1, compound=LEFT, text='Start',image=ip25)
-tab_control.add(tab2, compound=LEFT, text='Install / Uninstall',image=ip27)
-tab_control.add(tab3, compound=LEFT, text='Git & PPA',image=ip26)
+tab_control.add(tab1, compound=LEFT,image=ip25)
+tab_control.add(tab2, compound=LEFT,image=ip27)
+tab_control.add(tab3, compound=LEFT,image=ip26)
 #####################################################################################################
 #apps
 def btop_plusplus():
     global bt_pp
     bt_pp=Toplevel()
-    bt_pp['background'] = '#dadada'
+    bt_pp['background'] = '#191925'
       
     logo = Label(bt_pp, image=ip03, text="btop++",font=("Helvetica",16), anchor="w",
-                  highlightthickness=0, borderwidth=0, background='#dadada', foreground="black", compound=TOP).grid(column=0, row=0)
+                  highlightthickness=0, borderwidth=0, background='#191925', foreground="white", compound=TOP).grid(column=0, row=0)
     
     bt_inst = Button(bt_pp, text="Install",font=("Helvetica",11,"bold"),justify="left", anchor="w",
-                     highlightthickness=0, borderwidth=0, background='#dadada', foreground="black", compound=LEFT).grid(column=0, row=1)
+                     highlightthickness=0, borderwidth=0, background='#191925', foreground="white", compound=LEFT).grid(column=0, row=1)
     
     bt_uninst = Button(bt_pp, text="Uninstall",font=("Helvetica",11,"bold"), anchor="w",
-                  highlightthickness=0, borderwidth=0, background='#dadada', foreground="black", compound=LEFT,justify="left").grid(column=0, row=2)
+                  highlightthickness=0, borderwidth=0, background='#191925', foreground="white", compound=LEFT,justify="left").grid(column=0, row=2)
     
     bt_info = Label(bt_pp, text="Resource monitor that shows usage and stats for\nprocessor,memory, disks, network and processes.",justify="left", anchor="w",
-                  highlightthickness=0, borderwidth=0, background='#dadada', foreground="black", compound=TOP).grid(column=1, row=0)
+                  highlightthickness=0, borderwidth=0, background='#191925', foreground="white", compound=TOP).grid(column=1, row=0)
     
     bt_pic = Label(bt_pp,image=ip24, anchor="w",
-                  highlightthickness=0, borderwidth=0, background='#dadada', foreground="black", compound=TOP).grid(column=1, row=1,rowspan=12,pady=10)
+                  highlightthickness=0, borderwidth=0, background='#191925', foreground="white", compound=TOP).grid(column=1, row=1,rowspan=12,pady=10)
     
 def argon_one():
     global ar
     ar=Toplevel()
-    ar['background'] = '#dadada'
+    ar['background'] = '#191925'
       
     logo = Label(ar, image=ip20, text="Argon One Driver",font=("Helvetica",16), anchor="w",
-                  highlightthickness=0, borderwidth=0, background='#dadada', foreground="black", compound=TOP).grid(column=0, row=0)
+                  highlightthickness=0, borderwidth=0, background='#191925', foreground="white", compound=TOP).grid(column=0, row=0)
     
     ao_inst = Button(ar, text="Install",font=("Helvetica",11,"bold"),justify="left", anchor="w",
-                     highlightthickness=0, borderwidth=0, background='#dadada', foreground="black", compound=LEFT).grid(column=0, row=1)
+                     highlightthickness=0, borderwidth=0, background='#191925', foreground="white", compound=LEFT).grid(column=0, row=1)
     
     ao_uninst = Button(ar, text="Uninstall",font=("Helvetica",11,"bold"), anchor="w",
-                  highlightthickness=0, borderwidth=0, background='#dadada', foreground="black", compound=LEFT,justify="left").grid(column=0, row=2)
+                  highlightthickness=0, borderwidth=0, background='#191925', foreground="white", compound=LEFT,justify="left").grid(column=0, row=2)
     
     ao_info = Label(ar, text="Driver for the Argon One Case.Including fan control.\nCommand: argonone-config",justify="left", anchor="w",
-                  highlightthickness=0, borderwidth=0, background='#dadada', foreground="black", compound=TOP).grid(column=1, row=0)
+                  highlightthickness=0, borderwidth=0, background='#191925', foreground="white", compound=TOP).grid(column=1, row=0)
     
     ao_pic = Label(ar,image=ip24, anchor="w",
-                  highlightthickness=0, borderwidth=0, background='#dadada', foreground="black", compound=TOP).grid(column=1, row=1,rowspan=12,pady=10)
+                  highlightthickness=0, borderwidth=0, background='#191925', foreground="white", compound=TOP).grid(column=1, row=1,rowspan=12,pady=10)
     
 def desk_pi():
     global dp
     dp=Toplevel()
-    dp['background'] = '#dadada'
+    dp['background'] = '#191925'
       
     logo = Label(dp, image=ip05, text="Deskpi Pro Driver",font=("Helvetica",16), anchor="w",
-                  highlightthickness=0, borderwidth=0, background='#dadada', foreground="black", compound=TOP).grid(column=0, row=0)
+                  highlightthickness=0, borderwidth=0, background='#191925', foreground="white", compound=TOP).grid(column=0, row=0)
     
     dp_inst = Button(dp, text="Install",font=("Helvetica",11,"bold"),justify="left", anchor="w",
-                     highlightthickness=0, borderwidth=0, background='#dadada', foreground="black", compound=LEFT).grid(column=0, row=1)
+                     highlightthickness=0, borderwidth=0, background='#191925', foreground="white", compound=LEFT).grid(column=0, row=1)
     
     dp_uninst = Button(dp, text="Uninstall",font=("Helvetica",11,"bold"), anchor="w",
-                  highlightthickness=0, borderwidth=0, background='#dadada', foreground="black", compound=LEFT,justify="left").grid(column=0, row=2)
+                  highlightthickness=0, borderwidth=0, background='#191925', foreground="white", compound=LEFT,justify="left").grid(column=0, row=2)
     
     dp_info = Label(dp, text="Driver for the Deskpi Pro Case.Including fan control.\nCommand: argonone-config",justify="left", anchor="w",
-                  highlightthickness=0, borderwidth=0, background='#dadada', foreground="black", compound=TOP).grid(column=1, row=0)
+                  highlightthickness=0, borderwidth=0, background='#191925', foreground="white", compound=TOP).grid(column=1, row=0)
     
     dp_pic = Label(dp,image=ip24, anchor="w",
-                  highlightthickness=0, borderwidth=0, background='#dadada', foreground="black", compound=TOP).grid(column=1, row=1,rowspan=12,pady=10)   
+                  highlightthickness=0, borderwidth=0, background='#191925', foreground="white", compound=TOP).grid(column=1, row=1,rowspan=12,pady=10)   
 
 def pop_pikiss():
     global pikiss
@@ -154,16 +165,16 @@ def pop_pikiss():
     
       
     logo = Label(pikiss, image=ip13, text="PiKiss",font=("Helvetica",16), anchor="w",
-                  highlightthickness=0, borderwidth=0, background='#dadada', foreground="black", compound=TOP).grid(column=0, row=0)
+                  highlightthickness=0, borderwidth=0, background='#191925', foreground="white", compound=TOP).grid(column=0, row=0)
     
     pk_inst = Button(pikiss, text="Install", anchor="w",
-                  highlightthickness=0, borderwidth=0, background='#dadada', foreground="black", compound=LEFT).grid(column=0, row=1)
+                  highlightthickness=0, borderwidth=0, background='#191925', foreground="white", compound=LEFT).grid(column=0, row=1)
     
     pk_uninst = Button(pikiss, text="Uninstall", anchor="w",
-                  highlightthickness=0, borderwidth=0, background='#dadada', foreground="black", compound=LEFT).grid(column=0, row=2)
+                  highlightthickness=0, borderwidth=0, background='#191925', foreground="white", compound=LEFT).grid(column=0, row=2)
     
     pk_info = Label(pikiss,justify="left", text="Installing an application on Linux is not a complex task.\nSometimes you just type sudo apt install and get\nthe application installed with all of its dependencies.\nBut... What if we need to install more than one app\nsuch as a web server or it requires many steps to complete\nthe install process? Is it not in the\nofficial repositories?",
-                  highlightthickness=0, borderwidth=0, background='#dadada', foreground="black", compound=TOP).grid(column=1, row=0,rowspan=2)
+                  highlightthickness=0, borderwidth=0, background='#191925', foreground="white", compound=TOP).grid(column=1, row=0,rowspan=2)
 
 
 
@@ -233,68 +244,68 @@ il24 = Label(image=ip24)
 
 
 #####################################################################TAB1
-ess_lbl = Label(tab1, image=tp01, borderwidth=0, background='#dadada',highlightthickness=0)
+ess_lbl = Label(tab1, image=tp01, borderwidth=0, background='#191925',highlightthickness=0)
 #ess_lbl.place(x=13,y=50)
 ess_lbl.pack(pady=50)
 
 Sugg = Label(tab1, width=105, text="Developer's choice:",font=("Helvetica",16), anchor="w",
-                  highlightthickness=0, borderwidth=1, background='#dadada', foreground="black").pack()
+                  highlightthickness=0, borderwidth=0, background='#191925', foreground="white").pack()
 
-ess_frame = Frame(tab1, borderwidth=0, background='#dadada',highlightthickness=0)
+ess_frame = Frame(tab1, borderwidth=0, background='#191925',highlightthickness=0)
 #ess_frame.place(x=3,y=250)
 ess_frame.pack(pady=20)
 
 
 shop_btn01 = Button(ess_frame, width=105, image=ip03, text="btop++", anchor="n", highlightthickness=0,
-                  borderwidth=2, foreground="black", compound=TOP,font=("Helvetica",11,"bold"),command=btop_plusplus).grid(column=0, row=0,pady=5, padx=5)
+                  borderwidth=0, foreground="white", compound=TOP,font=("Helvetica",11,"bold"),command=btop_plusplus, background='#191925').grid(column=0, row=0,pady=5, padx=5)
 
 shop_btn01 = Button(ess_frame, width=105, image=ip20, text="Argon One Driver", anchor="n", highlightthickness=0,
-                  borderwidth=2, foreground="black", compound=TOP,font=("Helvetica",11,"bold"),command=argon_one).grid(column=1, row=0,pady=5, padx=5)
+                  borderwidth=0, foreground="white", compound=TOP,font=("Helvetica",11,"bold"),command=argon_one, background='#191925').grid(column=1, row=0,pady=5, padx=5)
 
 shop_btn03 = Button(ess_frame, width=105, image=ip05, text="DeskPi Pro Driver", anchor="n", highlightthickness=0,
-                  borderwidth=2, foreground="black", compound=TOP,font=("Helvetica",11,"bold"),command=desk_pi).grid(column=2, row=0,pady=5, padx=5)
+                  borderwidth=0, foreground="white", compound=TOP,font=("Helvetica",11,"bold"),command=desk_pi, background='#191925').grid(column=2, row=0,pady=5, padx=5)
 
 shop_btn04 = Button(ess_frame, width=105, image=ip06, text="FanShim Driver", anchor="n", highlightthickness=0,
-                  borderwidth=2, foreground="black", compound=TOP,font=("Helvetica",11,"bold")).grid(column=3, row=0,pady=5, padx=5)
+                  borderwidth=0, foreground="white", compound=TOP,font=("Helvetica",11,"bold"), background='#191925').grid(column=3, row=0,pady=5, padx=5)
 
 shop_btn05 = Button(ess_frame, width=105, image=ip13, text="PiKiss", anchor="n", highlightthickness=0,
-                  borderwidth=2, foreground="black", compound=TOP,font=("Helvetica",11,"bold"),command=pop_pikiss).grid(column=4, row=0,pady=5, padx=5)
+                  borderwidth=0, foreground="white", compound=TOP,font=("Helvetica",11,"bold"), background='#191925',command=pop_pikiss).grid(column=4, row=0,pady=5, padx=5)
 
 shop_btn06 = Button(ess_frame, width=105, image=ip11, text="Pi-Apps", anchor="n", highlightthickness=0,
-                  borderwidth=2, foreground="black", compound=TOP,font=("Helvetica",11,"bold")).grid(column=0, row=1,pady=0, padx=5)
+                  borderwidth=0, foreground="white", compound=TOP,font=("Helvetica",11,"bold"), background='#191925').grid(column=0, row=1,pady=0, padx=5)
 
 shop_btn07 = Button(ess_frame, width=105, image=ip17, text="Tetris-CLI", anchor="n", highlightthickness=0,
-                  borderwidth=2, foreground="black", compound=TOP,font=("Helvetica",11,"bold")).grid(column=1, row=1,pady=1, padx=5)
+                  borderwidth=0, foreground="white", compound=TOP,font=("Helvetica",11,"bold"), background='#191925').grid(column=1, row=1,pady=1, padx=5)
 
 shop_btn08 = Button(ess_frame, width=105, image=ip01, text="Albert", anchor="n", highlightthickness=0,
-                  borderwidth=2, foreground="black", compound=TOP,font=("Helvetica",11,"bold")).grid(column=2, row=1,pady=2, padx=5)
+                  borderwidth=0, foreground="white", compound=TOP,font=("Helvetica",11,"bold"), background='#191925').grid(column=2, row=1,pady=2, padx=5)
 
 shop_btn09 = Button(ess_frame, width=105, image=ip23, text="Sublime Merge 64 Bit", anchor="n", highlightthickness=0,
-                  borderwidth=2, foreground="black", compound=TOP,font=("Helvetica",9,"bold")).grid(column=3, row=1,pady=2, padx=5)
+                  borderwidth=0, foreground="white", compound=TOP,font=("Helvetica",9,"bold"), background='#191925').grid(column=3, row=1,pady=2, padx=5)
 
 shop_btn10 = Button(ess_frame, width=105, image=ip22, text="Sublime Text 64 Bit", anchor="n", highlightthickness=0,
-                  borderwidth=2, foreground="black", compound=TOP,font=("Helvetica",9,"bold")).grid(column=4, row=1,pady=2, padx=5)
+                  borderwidth=0, foreground="white", compound=TOP,font=("Helvetica",9,"bold"), background='#191925').grid(column=4, row=1,pady=2, padx=5)
 
 #####################################################################################################TAB2
 # i = Image.open('icons/pigro_bg.png')
 # p = ImageTk.PhotoImage(i)
 # l = Label(tab2, image=p)
 # l.image = p
-# l['background'] = '#dadada'
+# l['background'] = '#191925'
 # l.place(x=0, y=10)
 
-inst0_frame = Frame(tab2, borderwidth=0, background='#dadada',highlightthickness=0)
+inst0_frame = Frame(tab2, borderwidth=0, background='#191925',highlightthickness=0)
 #ess_frame.place(x=3,y=250)
 inst0_frame.pack(anchor="nw",pady=10)
 
 
 
-inst1_frame = Frame(tab2, borderwidth=0, background='#dadada',highlightthickness=2,padx=10,pady=10)
+inst1_frame = Frame(tab2, borderwidth=0, background='#191925',highlightthickness=0,padx=10,pady=10)
 #ess_frame.place(x=3,y=250)
 inst1_frame.pack(anchor="n")
 
 info_inst0= Button(inst1_frame, image=ip21,anchor="n",
-                  highlightthickness=0, borderwidth=0, background='#dadada',command=inst_inf1).grid(row=1,rowspan=1,column=0)
+                  highlightthickness=0, borderwidth=0, background='#191925',command=inst_inf1).grid(row=1,rowspan=1,column=0)
 
 
 
@@ -354,8 +365,8 @@ print (content)
 #my_label.pack(pady=20)
 
 
-inst_btn = Button(inst1_frame, text="Install", command=inst_btn1, highlightthickness=2, borderwidth=2,width=10,
-                        background='#dadada', foreground="black",font=(("Helvetica,bold"),"12"))        
+inst_btn = Button(inst1_frame,image=ip28, command=inst_btn1, highlightthickness=0, borderwidth=0,
+                        background='#191925', foreground="white",font=(("Helvetica,bold"),"12"))        
 
 inst_btn.grid(row=0, column=0)
 
@@ -398,7 +409,7 @@ inst2_p2="""; exec bash\"' """
 
 
 
-inst2_frame = Frame(tab2, borderwidth=0, background='#dadada',highlightthickness=2,pady=10,padx=10)
+inst2_frame = Frame(tab2, borderwidth=0, background='#191925',highlightthickness=0,pady=10,padx=10)
 #ess_frame.place(x=3,y=250)
 inst2_frame.pack(anchor="n",pady=10)
 
@@ -449,13 +460,13 @@ fo2 = open("essentials/packages.list", "r")
 content2 = fo2.readlines()
 print (content2)
 
-inst_btn2 = Button(inst2_frame, text="Uninstall", command=inst_btn2, highlightthickness=2, borderwidth=2,width=10,
-                        background='#dadada', foreground="black",font=(("Helvetica,bold"),"12"))        
+inst_btn2 = Button(inst2_frame,image=ip29, command=inst_btn2, highlightthickness=0, borderwidth=0,
+                        background='#191925', foreground="white",font=(("Helvetica,bold"),"12"))        
 
 inst_btn2.grid(row=0, column=0)
 
 info_inst1= Button(inst2_frame, image=ip21,anchor="n",
-                  highlightthickness=0, borderwidth=0, background='#dadada',command=inst_inf2).grid(row=1,rowspan=1,column=0)
+                  highlightthickness=0, borderwidth=0, background='#191925',command=inst_inf2).grid(row=1,rowspan=1,column=0)
 # Create an entry box
 
 my_entry2 = Entry(inst2_frame,font=("Helvetica",12), width=60)
@@ -489,17 +500,28 @@ inst3_p1=""" xterm -e 'bash -c \"~/PDL/essentials/"""
 inst3_p2="""; exec bash\"' """
 inst3_p3="/install.sh"
 
+uninst3_p1=""" xterm -e 'bash -c \"~/PDL/essentials/"""
+uninst3_p2="""; exec bash\"' """
+uninst3_p3="/uninstall.sh"
 
-inst3_frame = Frame(tab3, borderwidth=0, background='#dadada',highlightthickness=2,pady=10,padx=10)
+inst3_frame = Frame(tab3, borderwidth=0, background='#191925',highlightthickness=0,pady=10,padx=10)
 #ess_frame.place(x=3,y=250)
-inst3_frame.pack(anchor="n",pady=10)
+inst3_frame.grid(row=0,column=0)
+
+inst31_frame = Frame(tab3, borderwidth=0, background='#191925',highlightthickness=0,pady=10,padx=10)
+#ess_frame.place(x=3,y=250)
+inst31_frame.grid(row=0,column=1)
+
+
 
 
 def inst_git():
     entry_text3 = my_entry3.get()
-    popen(inst3_p1 + entry_text3+inst3_p3+ inst2_p2)
+    popen(inst3_p1 + entry_text3+inst3_p3+ inst3_p2)
 
-
+def uninst_git():
+    entry_text3 = my_entry3.get()
+    popen(uninst3_p1 + entry_text3+uninst3_p3+ uninst3_p2)
 
 # Update the listbox
 
@@ -541,21 +563,25 @@ fo3 = open("essentials/apps.txt", "r")
 content3 = fo3.readlines()
 print (content3)
 
-inst_btn3 = Button(inst3_frame, text="Test Bomb", highlightthickness=2, borderwidth=2,width=10,
-                        background='#dadada', foreground="black",font=(("Helvetica,bold"),"12"),command=inst_git)        
+inst_btn3 = Button(inst3_frame,image=ip28, highlightthickness=0, borderwidth=0,
+                        background='#191925', foreground="white",font=(("Helvetica,bold"),"12"),command=inst_git)        
 
-inst_btn3.grid(row=0, column=0)
+inst_btn3.pack(anchor="n")
+
+uninst_btn3 = Button(inst3_frame,image=ip29, highlightthickness=0, borderwidth=0,
+                        background='#191925', foreground="white",font=(("Helvetica,bold"),"12"),command=uninst_git)        
+
+uninst_btn3.pack()
 
 info_inst3= Button(inst3_frame, image=ip21,anchor="n",
-                  highlightthickness=0, borderwidth=0, background='#dadada',command=inst_inf2).grid(row=1,rowspan=1,column=0)
+                  highlightthickness=0, borderwidth=0, background='#191925',command=inst_inf2).pack()
 # Create an entry box
 
-my_entry3 = Entry(inst3_frame,font=("Helvetica",12), width=60)
-my_entry3.grid(row=0, column=1)
+my_entry3 = Entry(inst31_frame,font=("Helvetica",12), width=60)
+my_entry3.pack()
 
-my_list3 = Listbox(inst3_frame, width=67,height=30)
-my_list3.grid(row=1, column=1,padx=10)
-
+my_list3 = Listbox(inst31_frame, width=67,height=30)
+my_list3.pack()
 fo3 = open("essentials/apps.txt", "r")
 content3 = fo3.readlines()
 for i3,s3 in enumerate(content3):
