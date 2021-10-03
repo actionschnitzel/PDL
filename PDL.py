@@ -185,8 +185,13 @@ def inst_inf1():
 
 def inst_inf2():
     messagebox.showinfo("What is it?", "The list contains all installed packages. ALL! You can either search with the mouse wheel or type the desired package into the search bar. Click on the desired packet and press uninstall.")
+
+def inst_inf3():
+    messagebox.showinfo("What is it?", "The list contains Git & PPA projects! Click on the desired packet and press install/uninstall.")
     
-#####################################################################################################
+
+#######
+##############################################################################################
 tab_tp1 = Image.open('icons/Essentials.png')
 tp01 = ImageTk.PhotoImage(tab_tp1)
 tl01 = Label(image=tp01)
@@ -230,11 +235,11 @@ tab_ip21 = Image.open('icons/info_button.png')
 ip21 = ImageTk.PhotoImage(tab_ip21)
 il21 = Label(image=ip21)
 
-tab_ip22 = Image.open('essentials/Sublime/sublime_text.png')
+tab_ip22 = Image.open('essentials/Sublime_Text/sublime_text.png')
 ip22 = ImageTk.PhotoImage(tab_ip22)
 il22 = Label(image=ip22)
 
-tab_ip23 = Image.open('essentials/Sublime/sublime_merge.png')
+tab_ip23 = Image.open('essentials/Sublime_Merge/sublime_merge.png')
 ip23 = ImageTk.PhotoImage(tab_ip23)
 il23 = Label(image=ip23)
 
@@ -574,7 +579,7 @@ uninst_btn3 = Button(inst3_frame,image=ip29, highlightthickness=0, borderwidth=0
 uninst_btn3.pack()
 
 info_inst3= Button(inst3_frame, image=ip21,anchor="n",
-                  highlightthickness=0, borderwidth=0, background='#191925',command=inst_inf2).pack()
+                  highlightthickness=0, borderwidth=0, background='#191925',command=inst_inf3).pack()
 # Create an entry box
 
 my_entry3 = Entry(inst31_frame,font=("Helvetica",12), width=60)
