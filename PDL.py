@@ -34,7 +34,6 @@ os.system("find ~/PDL/essentials -type f -exec chmod +x {} \;")
 
 
 
-
 main = Tk()
 main.title("PDL (Pacchetti di Lamponi) v. ALPHA 0.00001 --Standalone-Version--")
 icon = tk.PhotoImage(file="icons/PiGroLogoslim.png")
@@ -98,6 +97,10 @@ tab_control.add(tab1, compound=LEFT,image=ip25)
 tab_control.add(tab2, compound=LEFT,image=ip27)
 tab_control.add(tab3, compound=LEFT,image=ip26)
 #####################################################################################################
+
+#messagebox.showinfo(massage="Please note that this is an ALPHA Version. Not everything works properly")
+
+messagebox.showwarning(title="HI", message="Please note that this is an ALPHA Version. Not everything works properly HAVE FUN :-)")
 #apps
 def btop_plusplus():
     global bt_pp
@@ -116,12 +119,13 @@ def btop_plusplus():
     bt_info = Label(bt_pp, text="Resource monitor that shows usage and stats for\nprocessor,memory, disks, network and processes.",justify="left", anchor="w",
                   highlightthickness=0, borderwidth=0, background='#191925', foreground="white", compound=TOP).grid(column=1, row=0)
     
-    bt_pic = Label(bt_pp,image=ip24, anchor="w",
-                  highlightthickness=0, borderwidth=0, background='#191925', foreground="white", compound=TOP).grid(column=1, row=1,rowspan=12,pady=10)
+    #bt_pic = Label(bt_pp,image=ip24, anchor="w",
+                  #highlightthickness=0, borderwidth=0, background='#191925', foreground="white", compound=TOP).grid(column=1, row=1,rowspan=12,pady=10)
     
 def argon_one():
     global ar
     ar=Toplevel()
+    ar.geometry("600x250")
     ar['background'] = '#191925'
       
     logo = Label(ar, image=ip20, text="Argon One Driver",font=("Helvetica",16), anchor="w",
@@ -136,12 +140,14 @@ def argon_one():
     ao_info = Label(ar, text="Driver for the Argon One Case.Including fan control.\nCommand: argonone-config",justify="left", anchor="w",
                   highlightthickness=0, borderwidth=0, background='#191925', foreground="white", compound=TOP).grid(column=1, row=0)
     
-    ao_pic = Label(ar,image=ip24, anchor="w",
-                  highlightthickness=0, borderwidth=0, background='#191925', foreground="white", compound=TOP).grid(column=1, row=1,rowspan=12,pady=10)
+    #ao_pic = Label(ar,image=ip24, anchor="w",
+                  #highlightthickness=0, borderwidth=0, background='#191925', foreground="white", compound=TOP).grid(column=1, row=1,rowspan=12,pady=10)
     
 def desk_pi():
     global dp
     dp=Toplevel()
+    dp.geometry("600x250")
+
     dp['background'] = '#191925'
       
     logo = Label(dp, image=ip05, text="Deskpi Pro Driver",font=("Helvetica",16), anchor="w",
@@ -156,13 +162,14 @@ def desk_pi():
     dp_info = Label(dp, text="Driver for the Deskpi Pro Case.Including fan control.\nCommand: argonone-config",justify="left", anchor="w",
                   highlightthickness=0, borderwidth=0, background='#191925', foreground="white", compound=TOP).grid(column=1, row=0)
     
-    dp_pic = Label(dp,image=ip24, anchor="w",
-                  highlightthickness=0, borderwidth=0, background='#191925', foreground="white", compound=TOP).grid(column=1, row=1,rowspan=12,pady=10)   
+    #dp_pic = Label(dp,image=ip24, anchor="w",
+                  #highlightthickness=0, borderwidth=0, background='#191925', foreground="white", compound=TOP).grid(column=1, row=1,rowspan=12,pady=10)   
 
 def pop_pikiss():
     global pikiss
     pikiss=Toplevel()
-    
+    pikiss.geometry("600x250")
+    pikiss['background'] = '#191925'
       
     logo = Label(pikiss, image=ip13, text="PiKiss",font=("Helvetica",16), anchor="w",
                   highlightthickness=0, borderwidth=0, background='#191925', foreground="white", compound=TOP).grid(column=0, row=0)
@@ -176,10 +183,117 @@ def pop_pikiss():
     pk_info = Label(pikiss,justify="left", text="Installing an application on Linux is not a complex task.\nSometimes you just type sudo apt install and get\nthe application installed with all of its dependencies.\nBut... What if we need to install more than one app\nsuch as a web server or it requires many steps to complete\nthe install process? Is it not in the\nofficial repositories?",
                   highlightthickness=0, borderwidth=0, background='#191925', foreground="white", compound=TOP).grid(column=1, row=0,rowspan=2)
 
-
-
-
+def pop_fanshim():
+    global fshim
+    fshim=Toplevel()
+    fshim.geometry("600x250")
+    fshim['background'] = '#191925'
+      
+    logo = Label(fshim, image=ip06, text="FanShim Driver",font=("Helvetica",16), anchor="w",
+                  highlightthickness=0, borderwidth=0, background='#191925', foreground="white", compound=TOP).grid(column=0, row=0)
     
+    fs_inst = Button(fshim, text="Install", anchor="w",
+                  highlightthickness=0, borderwidth=0, background='#191925', foreground="white", compound=LEFT).grid(column=0, row=1)
+    
+    fs_uninst = Button(fshim, text="Uninstall", anchor="w",
+                  highlightthickness=0, borderwidth=0, background='#191925', foreground="white", compound=LEFT).grid(column=0, row=2)
+    
+    fs_info = Label(fshim,justify="left", text="Driver and controls",
+                  highlightthickness=0, borderwidth=0, background='#191925', foreground="white", compound=TOP).grid(column=1, row=0,rowspan=2)
+
+def pop_piapps():
+    global papps
+    papps=Toplevel()
+    papps.geometry("600x250")
+    papps['background'] = '#191925'
+      
+    logo = Label(papps, image=ip11, text="Pi-Apps",font=("Helvetica",16), anchor="w",
+                  highlightthickness=0, borderwidth=0, background='#191925', foreground="white", compound=TOP).grid(column=0, row=0)
+    
+    pa_inst = Button(papps, text="Install", anchor="w",
+                  highlightthickness=0, borderwidth=0, background='#191925', foreground="white", compound=LEFT).grid(column=0, row=1)
+    
+    pa_uninst = Button(papps, text="Uninstall", anchor="w",
+                  highlightthickness=0, borderwidth=0, background='#191925', foreground="white", compound=LEFT).grid(column=0, row=2)
+    
+    pa_info = Label(papps,justify="left", text="Let's be honest: Linux is harder to master than Windows.\nSometimes it's not user-friendly, and following an outdated tutorial \nmay break your Raspberry Pi's operating system.\nThere is no centralized software repository,\nexcept for the apt repositories which lack many desktop applications.\nSurely there is a better way! There is.\nIntroducing Pi-Apps, an expanding, well-maintained collection of app\ninstallation-scripts that you can run with one click.",
+                  highlightthickness=0, borderwidth=0, background='#191925', foreground="white", compound=TOP).grid(column=1, row=0,rowspan=2)
+
+def pop_tetris():
+    global tetriscli
+    tetriscli=Toplevel()
+    tetriscli.geometry("600x250")
+    tetriscli['background'] = '#191925'
+      
+    logo = Label(tetriscli, image=ip17, text="TETRIS-CLI",font=("Helvetica",16), anchor="w",
+                  highlightthickness=0, borderwidth=0, background='#191925', foreground="white", compound=TOP).grid(column=0, row=0)
+    
+    tc_inst = Button(tetriscli, text="Install", anchor="w",
+                  highlightthickness=0, borderwidth=0, background='#191925', foreground="white", compound=LEFT).grid(column=0, row=1)
+    
+    tc_uninst = Button(tetriscli, text="Uninstall", anchor="w",
+                  highlightthickness=0, borderwidth=0, background='#191925', foreground="white", compound=LEFT).grid(column=0, row=2)
+    
+    tc_info = Label(tetriscli,justify="left", text="Blocks ..",
+                  highlightthickness=0, borderwidth=0, background='#191925', foreground="white", compound=TOP).grid(column=1, row=0,rowspan=2)
+
+
+def pop_albert():
+    global bert
+    bert=Toplevel()
+    bert.geometry("600x250")
+    bert['background'] = '#191925'
+      
+    logo = Label(bert, image=ip01, text="Albert",font=("Helvetica",16), anchor="w",
+                  highlightthickness=0, borderwidth=0, background='#191925', foreground="white", compound=TOP).grid(column=0, row=0)
+    
+    ab_inst = Button(bert, text="Install", anchor="w",
+                  highlightthickness=0, borderwidth=0, background='#191925', foreground="white", compound=LEFT).grid(column=0, row=1)
+    
+    ab_uninst = Button(bert, text="Uninstall", anchor="w",
+                  highlightthickness=0, borderwidth=0, background='#191925', foreground="white", compound=LEFT).grid(column=0, row=2)
+    
+    ab_info = Label(bert,justify="left", text="Seach Bar.",
+                  highlightthickness=0, borderwidth=0, background='#191925', foreground="white", compound=TOP).grid(column=1, row=0,rowspan=2)
+
+def pop_text():
+    global sltext
+    sltext=Toplevel()
+    sltext.geometry("600x250")
+    sltext['background'] = '#191925'
+      
+    logo = Label(sltext, image=ip22, text="Sublime Text\narm64",font=("Helvetica",16), anchor="w",
+                  highlightthickness=0, borderwidth=0, background='#191925', foreground="white", compound=TOP).grid(column=0, row=0)
+    
+    st_inst = Button(sltext, text="Install", anchor="w",
+                  highlightthickness=0, borderwidth=0, background='#191925', foreground="white", compound=LEFT).grid(column=0, row=1)
+    
+    st_uninst = Button(sltext, text="Uninstall", anchor="w",
+                  highlightthickness=0, borderwidth=0, background='#191925', foreground="white", compound=LEFT).grid(column=0, row=2)
+    
+    st_info = Label(sltext,justify="left", text="Text Editor with a lot extra.",
+                  highlightthickness=0, borderwidth=0, background='#191925', foreground="white", compound=TOP).grid(column=1, row=0,rowspan=2)
+
+
+def pop_merge():
+    global slmerge
+    slmerge=Toplevel()
+    slmerge.geometry("600x250")
+    slmerge['background'] = '#191925'
+      
+    logo = Label(slmerge, image=ip23, text="Sublime Merge\narm64",font=("Helvetica",16), anchor="w",
+                  highlightthickness=0, borderwidth=0, background='#191925', foreground="white", compound=TOP).grid(column=0, row=0)
+    
+    sm_inst = Button(slmerge, text="Install", anchor="w",
+                  highlightthickness=0, borderwidth=0, background='#191925', foreground="white", compound=LEFT).grid(column=0, row=1)
+    
+    sm_uninst = Button(slmerge, text="Uninstall", anchor="w",
+                  highlightthickness=0, borderwidth=0, background='#191925', foreground="white", compound=LEFT).grid(column=0, row=2)
+    
+    sm_info = Label(slmerge,justify="left", text="UI for your Git Repo.",
+                  highlightthickness=0, borderwidth=0, background='#191925', foreground="white", compound=TOP).grid(column=1, row=0,rowspan=2)
+
+
 def inst_inf1():
     messagebox.showinfo("You called for help?", "The list contains all available packages. Yes, even the ones you added yourself! You can either search with the mouse wheel or type the desired package into the search bar. Click on the desired packet and press install.")
 
@@ -207,11 +321,11 @@ tab_ip3 = Image.open('essentials/btop++/logo.png')
 ip03 = ImageTk.PhotoImage(tab_ip3)
 il03 = Label(image=ip03)
 
-tab_ip5 = Image.open('essentials/DeskPi_Pro_Driver/DeskpiPro_icon.png')
+tab_ip5 = Image.open('essentials/Driver---DeskPi_Pro/DeskpiPro_icon.png')
 ip05 = ImageTk.PhotoImage(tab_ip5)
 il05 = Label(image=ip05)
 
-tab_ip6 = Image.open('essentials/FanShim_Driver/shim_icon.png')
+tab_ip6 = Image.open('essentials/Driver---FanShim/shim_icon.png')
 ip06 = ImageTk.PhotoImage(tab_ip6)
 il06 = Label(image=ip06)
 
@@ -227,7 +341,7 @@ tab_ip17 = Image.open('essentials/Tetris-CLI/tetris.png')
 ip17 = ImageTk.PhotoImage(tab_ip17)
 il17 = Label(image=ip17)
 
-tab_ip20 = Image.open('essentials/Argon_One_Driver/argon_icon.png')
+tab_ip20 = Image.open('essentials/Driver---Argon_One/argon_icon.png')
 ip20 = ImageTk.PhotoImage(tab_ip20)
 il20 = Label(image=ip20)
 
@@ -271,25 +385,25 @@ shop_btn03 = Button(ess_frame, width=105, image=ip05, text="DeskPi Pro Driver", 
                   borderwidth=0, foreground="white", compound=TOP,font=("Helvetica",11,"bold"),command=desk_pi, background='#191925').grid(column=2, row=0,pady=5, padx=5)
 
 shop_btn04 = Button(ess_frame, width=105, image=ip06, text="FanShim Driver", anchor="n", highlightthickness=0,
-                  borderwidth=0, foreground="white", compound=TOP,font=("Helvetica",11,"bold"), background='#191925').grid(column=3, row=0,pady=5, padx=5)
+                  borderwidth=0, foreground="white", compound=TOP,font=("Helvetica",11,"bold"), background='#191925',command=pop_fanshim).grid(column=3, row=0,pady=5, padx=5)
 
 shop_btn05 = Button(ess_frame, width=105, image=ip13, text="PiKiss", anchor="n", highlightthickness=0,
                   borderwidth=0, foreground="white", compound=TOP,font=("Helvetica",11,"bold"), background='#191925',command=pop_pikiss).grid(column=4, row=0,pady=5, padx=5)
 
 shop_btn06 = Button(ess_frame, width=105, image=ip11, text="Pi-Apps", anchor="n", highlightthickness=0,
-                  borderwidth=0, foreground="white", compound=TOP,font=("Helvetica",11,"bold"), background='#191925').grid(column=0, row=1,pady=0, padx=5)
+                  borderwidth=0, foreground="white", compound=TOP,font=("Helvetica",11,"bold"), background='#191925',command=pop_piapps).grid(column=0, row=1,pady=0, padx=5)
 
 shop_btn07 = Button(ess_frame, width=105, image=ip17, text="Tetris-CLI", anchor="n", highlightthickness=0,
-                  borderwidth=0, foreground="white", compound=TOP,font=("Helvetica",11,"bold"), background='#191925').grid(column=1, row=1,pady=1, padx=5)
+                  borderwidth=0, foreground="white", compound=TOP,font=("Helvetica",11,"bold"), background='#191925',command=pop_tetris).grid(column=1, row=1,pady=1, padx=5)
 
 shop_btn08 = Button(ess_frame, width=105, image=ip01, text="Albert", anchor="n", highlightthickness=0,
-                  borderwidth=0, foreground="white", compound=TOP,font=("Helvetica",11,"bold"), background='#191925').grid(column=2, row=1,pady=2, padx=5)
+                  borderwidth=0, foreground="white", compound=TOP,font=("Helvetica",11,"bold"), background='#191925',command=pop_albert).grid(column=2, row=1,pady=2, padx=5)
 
 shop_btn09 = Button(ess_frame, width=105, image=ip23, text="Sublime Merge 64 Bit", anchor="n", highlightthickness=0,
-                  borderwidth=0, foreground="white", compound=TOP,font=("Helvetica",9,"bold"), background='#191925').grid(column=3, row=1,pady=2, padx=5)
+                  borderwidth=0, foreground="white", compound=TOP,font=("Helvetica",9,"bold"), background='#191925',command=pop_merge).grid(column=3, row=1,pady=2, padx=5)
 
 shop_btn10 = Button(ess_frame, width=105, image=ip22, text="Sublime Text 64 Bit", anchor="n", highlightthickness=0,
-                  borderwidth=0, foreground="white", compound=TOP,font=("Helvetica",9,"bold"), background='#191925').grid(column=4, row=1,pady=2, padx=5)
+                  borderwidth=0, foreground="white", compound=TOP,font=("Helvetica",9,"bold"), background='#191925',command=pop_text).grid(column=4, row=1,pady=2, padx=5)
 
 #####################################################################################################TAB2
 # i = Image.open('icons/pigro_bg.png')
