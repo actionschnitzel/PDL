@@ -1,5 +1,5 @@
 # Pacchetti (di Lamponi)     
-![GUI](https://github.com/actionschnitzel/PDL/blob/main/icons/PiGroLogoslim.png)
+![GUI](https://github.com/actionschnitzel/tingsandstuff/blob/main/header_Y.png)
 
 
 A Raspberry Pi Package Manager    
