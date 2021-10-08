@@ -35,7 +35,7 @@ os.system("find ~/PDL/essentials -type f -exec chmod +x {} \;")
 
 
 main = Tk()
-main.title("PDL (Pacchetti di Lamponi) v. ALPHA 0.00001 --Standalone-Version--")
+main.title("PDL (Pacchetti di Lamponi) v0.1 --Standalone-Version--")
 icon = tk.PhotoImage(file="icons/PiGroLogoslim.png")
 main.tk.call('wm', 'iconphoto', main._w, icon)
 #main['background'] = '#191925'
@@ -92,6 +92,14 @@ il28 = Label(image=ip28)
 tab_ip29 = Image.open('icons/uninstall_btn.png')
 ip29 = ImageTk.PhotoImage(tab_ip29)
 il29 = Label(image=ip29)
+
+tab_ip30 = Image.open('icons/gpk.png')
+ip30 = ImageTk.PhotoImage(tab_ip30)
+il30 = Label(image=ip30)
+
+tab_ip31 = Image.open('icons/howto_btn.png')
+ip31 = ImageTk.PhotoImage(tab_ip31)
+il31 = Label(image=ip31)
 ########################
 tab_control.add(tab1, compound=LEFT,image=ip25)
 tab_control.add(tab2, compound=LEFT,image=ip27)
@@ -100,21 +108,26 @@ tab_control.add(tab3, compound=LEFT,image=ip26)
 
 #messagebox.showinfo(massage="Please note that this is an ALPHA Version. Not everything works properly")
 
-messagebox.showwarning(title="HI", message="Please note that this is an ALPHA Version. Not everything works properly HAVE FUN :-)")
+#messagebox.showwarning(title="HI", message="Please note that this is an ALPHA Version. Not everything works properly HAVE FUN :-)")
 #apps
 def btop_plusplus():
     global bt_pp
     bt_pp=Toplevel()
     bt_pp['background'] = '#191925'
-      
+    
+    def top_inst():
+        os.system("xterm -e 'bash -c \"~/PDL/essentials/bpytop/install.sh; exec bash\"'")
+    def top_uninst():
+        os.system("xterm -e 'bash -c \"~/PDL/essentials/bpytop/uninstall.sh; exec bash\"'")
+
     logo = Label(bt_pp, image=ip03, text="btop++",font=("Helvetica",16), anchor="w",
                   highlightthickness=0, borderwidth=0, background='#191925', foreground="white", compound=TOP).grid(column=0, row=0)
     
     bt_inst = Button(bt_pp, text="Install",font=("Helvetica",11,"bold"),justify="left", anchor="w",
-                     highlightthickness=0, borderwidth=0, background='#191925', foreground="white", compound=LEFT).grid(column=0, row=1)
+                     highlightthickness=0, borderwidth=0, background='#191925', foreground="white", compound=LEFT,command=top_inst).grid(column=0, row=1)
     
     bt_uninst = Button(bt_pp, text="Uninstall",font=("Helvetica",11,"bold"), anchor="w",
-                  highlightthickness=0, borderwidth=0, background='#191925', foreground="white", compound=LEFT,justify="left").grid(column=0, row=2)
+                  highlightthickness=0, borderwidth=0, background='#191925', foreground="white", compound=LEFT,justify="left",command=top_uninst).grid(column=0, row=2)
     
     bt_info = Label(bt_pp, text="Resource monitor that shows usage and stats for\nprocessor,memory, disks, network and processes.",justify="left", anchor="w",
                   highlightthickness=0, borderwidth=0, background='#191925', foreground="white", compound=TOP).grid(column=1, row=0)
@@ -127,15 +140,21 @@ def argon_one():
     ar=Toplevel()
     ar.geometry("600x250")
     ar['background'] = '#191925'
+    
+    def argo_inst():
+        os.system("xterm -e 'bash -c \"~/PDL/essentials/Driver---Argon_One/install.sh; exec bash\"'")
+    def argo_uninst():
+        os.system("xterm -e 'bash -c \"~/PDL/essentials/Driver---Argon_One/uninstall.sh; exec bash\"'")
+
       
     logo = Label(ar, image=ip20, text="Argon One Driver",font=("Helvetica",16), anchor="w",
                   highlightthickness=0, borderwidth=0, background='#191925', foreground="white", compound=TOP).grid(column=0, row=0)
     
     ao_inst = Button(ar, text="Install",font=("Helvetica",11,"bold"),justify="left", anchor="w",
-                     highlightthickness=0, borderwidth=0, background='#191925', foreground="white", compound=LEFT).grid(column=0, row=1)
+                     highlightthickness=0, borderwidth=0, background='#191925', foreground="white", compound=LEFT,command=argo_inst).grid(column=0, row=1)
     
     ao_uninst = Button(ar, text="Uninstall",font=("Helvetica",11,"bold"), anchor="w",
-                  highlightthickness=0, borderwidth=0, background='#191925', foreground="white", compound=LEFT,justify="left").grid(column=0, row=2)
+                  highlightthickness=0, borderwidth=0, background='#191925', foreground="white", compound=LEFT,justify="left",command=argo_uninst).grid(column=0, row=2)
     
     ao_info = Label(ar, text="Driver for the Argon One Case.Including fan control.\nCommand: argonone-config",justify="left", anchor="w",
                   highlightthickness=0, borderwidth=0, background='#191925', foreground="white", compound=TOP).grid(column=1, row=0)
@@ -149,15 +168,21 @@ def desk_pi():
     dp.geometry("600x250")
 
     dp['background'] = '#191925'
-      
+
+    def dpp_inst():
+        os.system("xterm -e 'bash -c \"~/PDL/essentials/Driver---DeskPi_Pro/install.sh; exec bash\"'")
+    def dpp_uninst():
+        os.system("xterm -e 'bash -c \"~/PDL/essentials/Driver---DeskPi_Pro/uninstall.sh; exec bash\"'")
+
+
     logo = Label(dp, image=ip05, text="Deskpi Pro Driver",font=("Helvetica",16), anchor="w",
                   highlightthickness=0, borderwidth=0, background='#191925', foreground="white", compound=TOP).grid(column=0, row=0)
     
     dp_inst = Button(dp, text="Install",font=("Helvetica",11,"bold"),justify="left", anchor="w",
-                     highlightthickness=0, borderwidth=0, background='#191925', foreground="white", compound=LEFT).grid(column=0, row=1)
+                     highlightthickness=0, borderwidth=0, background='#191925', foreground="white", compound=LEFT,command=dpp_inst).grid(column=0, row=1)
     
     dp_uninst = Button(dp, text="Uninstall",font=("Helvetica",11,"bold"), anchor="w",
-                  highlightthickness=0, borderwidth=0, background='#191925', foreground="white", compound=LEFT,justify="left").grid(column=0, row=2)
+                  highlightthickness=0, borderwidth=0, background='#191925', foreground="white", compound=LEFT,justify="left",command=dpp_uninst).grid(column=0, row=2)
     
     dp_info = Label(dp, text="Driver for the Deskpi Pro Case.Including fan control.\nCommand: argonone-config",justify="left", anchor="w",
                   highlightthickness=0, borderwidth=0, background='#191925', foreground="white", compound=TOP).grid(column=1, row=0)
@@ -170,15 +195,22 @@ def pop_pikiss():
     pikiss=Toplevel()
     pikiss.geometry("600x250")
     pikiss['background'] = '#191925'
-      
-    logo = Label(pikiss, image=ip13, text="PiKiss",font=("Helvetica",16), anchor="w",
+
+    def pk_inst():
+        os.system("xterm -e 'bash -c \"~/PDL/essentials/Pikiss/install.sh; exec bash\"'")
+    def pk_uninst():
+        os.system("xterm -e 'bash -c \"~/PDL/essentials/Pikiss/uninstall.sh; exec bash\"'")
+
+
+
+    logo = Label(pikiss, image=ip13, text="piKiss",font=("Helvetica",16), anchor="w",
                   highlightthickness=0, borderwidth=0, background='#191925', foreground="white", compound=TOP).grid(column=0, row=0)
     
     pk_inst = Button(pikiss, text="Install", anchor="w",
-                  highlightthickness=0, borderwidth=0, background='#191925', foreground="white", compound=LEFT).grid(column=0, row=1)
+                  highlightthickness=0, borderwidth=0, background='#191925', foreground="white", compound=LEFT,command=pk_inst).grid(column=0, row=1)
     
     pk_uninst = Button(pikiss, text="Uninstall", anchor="w",
-                  highlightthickness=0, borderwidth=0, background='#191925', foreground="white", compound=LEFT).grid(column=0, row=2)
+                  highlightthickness=0, borderwidth=0, background='#191925', foreground="white", compound=LEFT,command=pk_uninst).grid(column=0, row=2)
     
     pk_info = Label(pikiss,justify="left", text="Installing an application on Linux is not a complex task.\nSometimes you just type sudo apt install and get\nthe application installed with all of its dependencies.\nBut... What if we need to install more than one app\nsuch as a web server or it requires many steps to complete\nthe install process? Is it not in the\nofficial repositories?",
                   highlightthickness=0, borderwidth=0, background='#191925', foreground="white", compound=TOP).grid(column=1, row=0,rowspan=2)
@@ -188,15 +220,21 @@ def pop_fanshim():
     fshim=Toplevel()
     fshim.geometry("600x250")
     fshim['background'] = '#191925'
-      
+
+    def fs_inst():
+        os.system("xterm -e 'bash -c \"~/PDL/essentials/Driver---FanShim/install.sh; exec bash\"'")
+    def fs_uninst():
+        os.system("xterm -e 'bash -c \"~/PDL/essentials/Driver---FanShim/uninstall.sh; exec bash\"'")
+
+
     logo = Label(fshim, image=ip06, text="FanShim Driver",font=("Helvetica",16), anchor="w",
                   highlightthickness=0, borderwidth=0, background='#191925', foreground="white", compound=TOP).grid(column=0, row=0)
     
     fs_inst = Button(fshim, text="Install", anchor="w",
-                  highlightthickness=0, borderwidth=0, background='#191925', foreground="white", compound=LEFT).grid(column=0, row=1)
+                  highlightthickness=0, borderwidth=0, background='#191925', foreground="white", compound=LEFT,command=fs_inst).grid(column=0, row=1)
     
     fs_uninst = Button(fshim, text="Uninstall", anchor="w",
-                  highlightthickness=0, borderwidth=0, background='#191925', foreground="white", compound=LEFT).grid(column=0, row=2)
+                  highlightthickness=0, borderwidth=0, background='#191925', foreground="white", compound=LEFT,command=fs_uninst).grid(column=0, row=2)
     
     fs_info = Label(fshim,justify="left", text="Driver and controls",
                   highlightthickness=0, borderwidth=0, background='#191925', foreground="white", compound=TOP).grid(column=1, row=0,rowspan=2)
@@ -206,15 +244,21 @@ def pop_piapps():
     papps=Toplevel()
     papps.geometry("600x250")
     papps['background'] = '#191925'
-      
+
+    def pia_inst():
+        os.system("xterm -e 'bash -c \"~/PDL/essentials/Pi-Apps/install.sh; exec bash\"'")
+    def pia_uninst():
+        os.system("xterm -e 'bash -c \"~/PDL/essentials/Pi-Apps/uninstall.sh; exec bash\"'")
+
+
     logo = Label(papps, image=ip11, text="Pi-Apps",font=("Helvetica",16), anchor="w",
                   highlightthickness=0, borderwidth=0, background='#191925', foreground="white", compound=TOP).grid(column=0, row=0)
     
     pa_inst = Button(papps, text="Install", anchor="w",
-                  highlightthickness=0, borderwidth=0, background='#191925', foreground="white", compound=LEFT).grid(column=0, row=1)
+                  highlightthickness=0, borderwidth=0, background='#191925', foreground="white", compound=LEFT,command=pia_inst).grid(column=0, row=1)
     
     pa_uninst = Button(papps, text="Uninstall", anchor="w",
-                  highlightthickness=0, borderwidth=0, background='#191925', foreground="white", compound=LEFT).grid(column=0, row=2)
+                  highlightthickness=0, borderwidth=0, background='#191925', foreground="white", compound=LEFT,command=pia_uninst).grid(column=0, row=2)
     
     pa_info = Label(papps,justify="left", text="Let's be honest: Linux is harder to master than Windows.\nSometimes it's not user-friendly, and following an outdated tutorial \nmay break your Raspberry Pi's operating system.\nThere is no centralized software repository,\nexcept for the apt repositories which lack many desktop applications.\nSurely there is a better way! There is.\nIntroducing Pi-Apps, an expanding, well-maintained collection of app\ninstallation-scripts that you can run with one click.",
                   highlightthickness=0, borderwidth=0, background='#191925', foreground="white", compound=TOP).grid(column=1, row=0,rowspan=2)
@@ -224,15 +268,21 @@ def pop_tetris():
     tetriscli=Toplevel()
     tetriscli.geometry("600x250")
     tetriscli['background'] = '#191925'
-      
+
+    def tet_inst():
+        os.system("xterm -e 'bash -c \"~/PDL/essentials/Pi-Apps/install.sh; exec bash\"'")
+    def tet_uninst():
+        os.system("xterm -e 'bash -c \"~/PDL/essentials/Pi-Apps/uninstall.sh; exec bash\"'")
+
+
     logo = Label(tetriscli, image=ip17, text="TETRIS-CLI",font=("Helvetica",16), anchor="w",
                   highlightthickness=0, borderwidth=0, background='#191925', foreground="white", compound=TOP).grid(column=0, row=0)
     
     tc_inst = Button(tetriscli, text="Install", anchor="w",
-                  highlightthickness=0, borderwidth=0, background='#191925', foreground="white", compound=LEFT).grid(column=0, row=1)
+                  highlightthickness=0, borderwidth=0, background='#191925', foreground="white", compound=LEFT,command=tet_inst).grid(column=0, row=1)
     
     tc_uninst = Button(tetriscli, text="Uninstall", anchor="w",
-                  highlightthickness=0, borderwidth=0, background='#191925', foreground="white", compound=LEFT).grid(column=0, row=2)
+                  highlightthickness=0, borderwidth=0, background='#191925', foreground="white", compound=LEFT,command=tet_uninst).grid(column=0, row=2)
     
     tc_info = Label(tetriscli,justify="left", text="Blocks ..",
                   highlightthickness=0, borderwidth=0, background='#191925', foreground="white", compound=TOP).grid(column=1, row=0,rowspan=2)
@@ -243,15 +293,21 @@ def pop_albert():
     bert=Toplevel()
     bert.geometry("600x250")
     bert['background'] = '#191925'
-      
+
+    def alb_inst():
+        os.system("xterm -e 'bash -c \"~/PDL/essentials/Pi-Apps/install.sh; exec bash\"'")
+    def alb_uninst():
+        os.system("xterm -e 'bash -c \"~/PDL/essentials/Pi-Apps/uninstall.sh; exec bash\"'")
+
+
     logo = Label(bert, image=ip01, text="Albert",font=("Helvetica",16), anchor="w",
                   highlightthickness=0, borderwidth=0, background='#191925', foreground="white", compound=TOP).grid(column=0, row=0)
     
     ab_inst = Button(bert, text="Install", anchor="w",
-                  highlightthickness=0, borderwidth=0, background='#191925', foreground="white", compound=LEFT).grid(column=0, row=1)
+                  highlightthickness=0, borderwidth=0, background='#191925', foreground="white", compound=LEFT,command=alb_inst).grid(column=0, row=1)
     
     ab_uninst = Button(bert, text="Uninstall", anchor="w",
-                  highlightthickness=0, borderwidth=0, background='#191925', foreground="white", compound=LEFT).grid(column=0, row=2)
+                  highlightthickness=0, borderwidth=0, background='#191925', foreground="white", compound=LEFT,command=alb_uninst).grid(column=0, row=2)
     
     ab_info = Label(bert,justify="left", text="Seach Bar.",
                   highlightthickness=0, borderwidth=0, background='#191925', foreground="white", compound=TOP).grid(column=1, row=0,rowspan=2)
@@ -261,15 +317,21 @@ def pop_text():
     sltext=Toplevel()
     sltext.geometry("600x250")
     sltext['background'] = '#191925'
-      
+
+    def subt_inst():
+        os.system("xterm -e 'bash -c \"~/PDL/essentials/Pi-Apps/install.sh; exec bash\"'")
+    def subt_uninst():
+        os.system("xterm -e 'bash -c \"~/PDL/essentials/Pi-Apps/uninstall.sh; exec bash\"'")
+        
+
     logo = Label(sltext, image=ip22, text="Sublime Text\narm64",font=("Helvetica",16), anchor="w",
                   highlightthickness=0, borderwidth=0, background='#191925', foreground="white", compound=TOP).grid(column=0, row=0)
     
     st_inst = Button(sltext, text="Install", anchor="w",
-                  highlightthickness=0, borderwidth=0, background='#191925', foreground="white", compound=LEFT).grid(column=0, row=1)
+                  highlightthickness=0, borderwidth=0, background='#191925', foreground="white", compound=LEFT,command=subt_inst).grid(column=0, row=1)
     
     st_uninst = Button(sltext, text="Uninstall", anchor="w",
-                  highlightthickness=0, borderwidth=0, background='#191925', foreground="white", compound=LEFT).grid(column=0, row=2)
+                  highlightthickness=0, borderwidth=0, background='#191925', foreground="white", compound=LEFT,command=subt_uninst).grid(column=0, row=2)
     
     st_info = Label(sltext,justify="left", text="Text Editor with a lot extra.",
                   highlightthickness=0, borderwidth=0, background='#191925', foreground="white", compound=TOP).grid(column=1, row=0,rowspan=2)
@@ -280,15 +342,22 @@ def pop_merge():
     slmerge=Toplevel()
     slmerge.geometry("600x250")
     slmerge['background'] = '#191925'
-      
+
+    def subm_inst():
+        os.system("xterm -e 'bash -c \"~/PDL/essentials/Pi-Apps/install.sh; exec bash\"'")
+    def subm_uninst():
+        os.system("xterm -e 'bash -c \"~/PDL/essentials/Pi-Apps/uninstall.sh; exec bash\"'")
+        
+
+
     logo = Label(slmerge, image=ip23, text="Sublime Merge\narm64",font=("Helvetica",16), anchor="w",
                   highlightthickness=0, borderwidth=0, background='#191925', foreground="white", compound=TOP).grid(column=0, row=0)
     
     sm_inst = Button(slmerge, text="Install", anchor="w",
-                  highlightthickness=0, borderwidth=0, background='#191925', foreground="white", compound=LEFT).grid(column=0, row=1)
+                  highlightthickness=0, borderwidth=0, background='#191925', foreground="white", compound=LEFT,command=subm_inst).grid(column=0, row=1)
     
     sm_uninst = Button(slmerge, text="Uninstall", anchor="w",
-                  highlightthickness=0, borderwidth=0, background='#191925', foreground="white", compound=LEFT).grid(column=0, row=2)
+                  highlightthickness=0, borderwidth=0, background='#191925', foreground="white", compound=LEFT,command=subm_uninst).grid(column=0, row=2)
     
     sm_info = Label(slmerge,justify="left", text="UI for your Git Repo.",
                   highlightthickness=0, borderwidth=0, background='#191925', foreground="white", compound=TOP).grid(column=1, row=0,rowspan=2)
@@ -303,7 +372,20 @@ def inst_inf2():
 def inst_inf3():
     messagebox.showinfo("What is it?", "The list contains Git & PPA projects! Click on the desired packet and press install/uninstall.")
     
-
+def howto():
+    global pop_changelog
+    pop_changelog=Toplevel()
+    #pop_changelog.geometry("650x600")
+    pop_changelog.title("How To Add Your Own Scripts")
+    s_list = Text(pop_changelog)
+    text_file = open("how_to.txt")
+    stuff = text_file.read()
+    s_list.insert(END, stuff)
+    text_file.close()
+    s_list.pack(anchor='w', fill=BOTH, expand=True)
+    
+def button_gpk():
+    popen('sudo pi-gpk-update-viewer')
 #######
 ##############################################################################################
 tab_tp1 = Image.open('icons/Essentials.png')
@@ -333,7 +415,7 @@ tab_ip11 = Image.open('essentials/Pi-Apps/proglogo.png')
 ip11 = ImageTk.PhotoImage(tab_ip11)
 il11 = Label(image=ip11)
 
-tab_ip13 = Image.open('essentials/PiKiss/logo_pikiss_header.png')
+tab_ip13 = Image.open('essentials/Pikiss/logo_pikiss_header.png')
 ip13 = ImageTk.PhotoImage(tab_ip13)
 il13 = Label(image=ip13)
 
@@ -412,6 +494,14 @@ shop_btn10 = Button(ess_frame, width=105, image=ip22, text="Sublime Text 64 Bit"
 # l.image = p
 # l['background'] = '#191925'
 # l.place(x=0, y=10)
+
+instx_frame = Frame(tab2, borderwidth=0, background='#191925',highlightthickness=0)
+#ess_frame.place(x=3,y=250)
+instx_frame.pack(pady=20)
+
+instx_btn = Button(instx_frame,image=ip30, highlightthickness=0, borderwidth=0,
+                        background='#191925', foreground="white",font=(("Helvetica,bold"),"12"),command=button_gpk)        
+instx_btn.grid(row=0, column=0)
 
 inst0_frame = Frame(tab2, borderwidth=0, background='#191925',highlightthickness=0)
 #ess_frame.place(x=3,y=250)
@@ -692,6 +782,11 @@ uninst_btn3 = Button(inst3_frame,image=ip29, highlightthickness=0, borderwidth=0
 
 uninst_btn3.pack()
 
+htb_btn = Button(inst3_frame,image=ip31, highlightthickness=0, borderwidth=0,
+                        background='#191925', foreground="white",font=(("Helvetica,bold"),"12"),command=howto)        
+
+htb_btn.pack(anchor="n")
+
 info_inst3= Button(inst3_frame, image=ip21,anchor="n",
                   highlightthickness=0, borderwidth=0, background='#191925',command=inst_inf3).pack()
 # Create an entry box
@@ -720,6 +815,7 @@ update3(content3)
 my_list3.bind("<<ListboxSelect>>", fillout3 )
 
 my_entry3.bind("<KeyRelease>", check3)
+
 
 #####################################################################################################
 tab_control.pack(expand=1, fill='both')

@@ -1,1 +1,1 @@
-pip3 install bpytop --upgrade
+pip3 install bpytop 
